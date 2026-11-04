@@ -3,6 +3,15 @@
 *.gsheet
 *.gslides
 
+# Carpetas y Documentos Excluidos
+References/
+z_documentos/
+Formato de Inspeccion Rapida Post-Sismo - duran.ing.gdoc
+Formato_Inspeccion_Rapida_duran_ing.pdf
+Formato, inspeccion Rapida.md
+Guia_Mision_Campo_Limoncito_Guadualito_Post_Sismo.md
+Itinerario_Mision_Limoncito_Guadualito.md
+
 # Archivos del Sistema Operativo
 Thumbs.db
 ehthumbs.db
