@@ -10,8 +10,7 @@
 
 ## Presentación del Subcapítulo
 
-> **Palabra de Maestro:**  
-> *"En nuestras tierras del Pacífico y de las riberas, la madera y la guadua son una bendición del monte: livianas, frescas, resistentes y aguantadoras. Pero una casa de madera no se cae por vieja ni porque la madera sea mala; se cae porque la armaron como una caja de fósforos floja, sin diagonales que la sostengan cuando la tierra se sacude o cuando el viento del mar empuja con rabia. En este capítulo vamos a aprender el secreto de los antiguos maestros y de los ingenieros de la norma NSR-10: cómo hacer para que la casa quede firme, cómo amarrar la guadua para que no se raje y cómo aislar los pilotes para que duren toda la vida."*
+> *"En nuestras tierras del Pacífico y de las riberas, la madera y la guadua son una bendición del monte: livianas, frescas, resistentes y aguantadoras. Pero una casa de madera no se cae por vieja ni porque la madera sea mala; se cae porque la armaron como una caja de fósforos floja, sin diagonales que la sostengan cuando la tierra se sacude o cuando el viento del mar empuja con rabia. En este capítulo vamos a aprender el secreto para que la casa quede firme, cómo amarrar la guadua para que no se raje y cómo aislar los pilotes para que duren toda la vida."*
 
 ---
 
@@ -39,7 +38,7 @@ flowchart TD
 
 ### Lámina Técnica 3.1: Estructura de Soporte — Palafito de Madera con Cruces de San Andrés
 
-![Estructura de Soporte - Palafito de Madera, Cruces de San Andrés y Aislamiento de Humedad](file:///g:/My%20Drive/MDCP/images/palafito_madera_espanol.jpg)
+![Estructura de Soporte - Palafito de Madera, Cruces de San Andrés y Aislamiento de Humedad](images/palafito_madera_espanol.jpg)
 *Figura 3.1: Despiece axonométrico de la estructura palafítica en madera. Nótese el dado de concreto ciclópeo de 40x40 cm con pletina metálica en "U" para cortar la humedad capilar, las columnas (pies derechos), vigas maestras y el sistema de arriostramiento en Cruz de San Andrés.*
 
 ---
