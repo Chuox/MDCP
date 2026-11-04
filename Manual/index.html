@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual del Constructor Popular Colombiano — Capítulo Piloto (Madera y Guadua)</title>
+  
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       SISTEMA DE DISEÑO Y VARIABLES GLOBALES
+       ========================================================= */
+    :root {
+      --primary: #d97706;         /* Ámbar tierra constructiva */
+      --primary-dark: #b45309;
+      --secondary: #0f766e;       /* Verde pacífico / guadua */
+      --dark: #18181b;
+      --dark-card: #27272a;
+      --text: #27272a;
+      --text-muted: #71717a;
+      --bg: #f8fafc;
+      --bg-card: #ffffff;
+      --border: #e2e8f0;
+      --border-accent: #cbd5e1;
+      --accent-danger: #dc2626;
+      --accent-success: #16a34a;
+      --paper-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'Fira Code', monospace;
+      --carta-width: 216mm;
+      --carta-height: 279mm;
+    }
+
+    [data-theme="dark"] {
+      --bg: #09090b;
+      --bg-card: #18181b;
+      --text: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --border: #27272a;
+      --border-accent: #3f3f46;
+      --paper-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* BARRA DE HERRAMIENTAS Y CONTROL SUPERIOR */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    [data-theme="dark"] .top-bar {
+      background: rgba(24, 24, 27, 0.88);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-dark);
+    }
+
+    .brand-badge {
+      background: var(--primary);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.15rem 0.5rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--border-accent);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      background: var(--border);
+    }
+
+    /* CONTENEDOR PRINCIPAL TIPO CARTILLA (HOJA CARTA) */
+    .sheet-wrapper {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .manual-page {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: var(--paper-shadow);
+      padding: 3.5rem 4rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ENCABEZADO DE PÁGINA */
+    .page-header {
+      border-bottom: 2px solid var(--text);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .series-label {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .chapter-main-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text);
+      margin-top: 0.25rem;
+    }
+
+    .normative-pill {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: var(--border);
+      color: var(--text);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      border-left: 3px solid var(--secondary);
+    }
+
+    /* BLOQUE "PALABRA DE MAESTRO" (CITA EDITORIAL POPULAR) */
+    .quote-box {
+      background: rgba(217, 119, 6, 0.06);
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem 1.75rem;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .quote-author {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .quote-text {
+      font-style: italic;
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* SECCIONES Y TÍTULOS */
+    h2.section-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 2.25rem 0 1rem 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    h3.sub-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem 0;
+      color: var(--secondary);
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    /* CAJAS DE ALERTA POPULAR (¡PILAS CON ESTO!) */
+    .alert-card {
+      border: 2px dashed var(--accent-danger);
+      background: rgba(220, 38, 38, 0.04);
+      padding: 1.25rem 1.5rem;
+      border-radius: 8px;
+      margin: 1.75rem 0;
+    }
+
+    .alert-header {
+      font-family: var(--font-display);
+      font-weight: 800;
+      color: var(--accent-danger);
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* SECCIÓN DE SIMULADOR INTERACTIVO */
+    .sim-card {
+      background: var(--bg);
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .sim-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .sim-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sim-stage {
+      background: #ffffff;
+      border: 2px solid #cbd5e1;
+      border-radius: 8px;
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 20px;
+    }
+
+    [data-theme="dark"] .sim-stage {
+      background: #1e1e24;
+      border-color: #3f3f46;
+    }
+
+    .sim-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 1rem;
+      margin-top: 1.25rem;
+      align-items: center;
+    }
+
+    .control-group label {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+      color: var(--text-muted);
+    }
+
+    .range-slider {
+      width: 100%;
+      accent-color: var(--primary);
+    }
+
+    /* SWITCH TOGGLE */
+    .toggle-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 46px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider-toggle {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #cbd5e1;
+      transition: .3s;
+      border-radius: 24px;
+    }
+
+    .slider-toggle:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider-toggle {
+      background-color: var(--accent-success);
+    }
+
+    input:checked + .slider-toggle:before {
+      transform: translateX(22px);
+    }
+
+    /* ESTILO DE IMÁGENES TÉCNICAS */
+    .tech-figure {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .tech-figure img {
+      width: 100%;
+      max-height: 580px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      padding: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      cursor: zoom-in;
+      transition: transform 0.2s ease;
+    }
+
+    .tech-figure img:hover {
+      transform: scale(1.01);
+    }
+
+    .fig-caption {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+      font-style: italic;
+    }
+
+    .fig-caption strong {
+      color: var(--text);
+    }
+
+    /* TABLAS TÉCNICAS LIMPIAS */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    table.tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    table.tech-table th {
+      background: var(--bg);
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--text);
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    table.tech-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    table.tech-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* CALCULADORA RÁPIDA DE PERNOS */
+    .calc-box {
+      background: rgba(15, 118, 110, 0.05);
+      border: 1px solid var(--secondary);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+
+    .calc-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--secondary);
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .calc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .calc-num {
+      font-family: var(--font-mono);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .calc-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+
+    /* LISTA DE CHEQUEO INTERACTIVA */
+    .checklist-container {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px dashed var(--border);
+      cursor: pointer;
+    }
+
+    .check-item:last-child {
+      border-bottom: none;
+    }
+
+    .check-item input[type="checkbox"] {
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-top: 0.15rem;
+      accent-color: var(--secondary);
+      cursor: pointer;
+    }
+
+    .check-text strong {
+      font-family: var(--font-display);
+      display: block;
+      color: var(--text);
+    }
+
+    .check-text span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .progress-bar-container {
+      margin-top: 1.25rem;
+      background: var(--border);
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      background: var(--secondary);
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* PIE DE PÁGINA DE EDICIÓN */
+    .page-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+      margin-top: 3rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    /* =========================================================
+       REGLAS DE IMPRESIÓN OFICIAL (TAMAÑO CARTA - PDF READY)
+       ========================================================= */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt;
+      }
+
+      .top-bar, .sim-controls, .no-print {
+        display: none !important;
+      }
+
+      .sheet-wrapper {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .manual-page {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 12mm 15mm !important;
+        margin: 0 !important;
+        page-break-after: always;
+      }
+
+      .tech-figure img {
+        max-height: 400px !important;
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+      }
+
+      .quote-box {
+        background: #f4f4f5 !important;
+        border-left: 4px solid #000 !important;
+      }
+
+      .alert-card {
+        border: 2px solid #000 !important;
+        background: #fafafa !important;
+      }
+
+      @page {
+        size: letter portrait;
+        margin: 10mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR DE NAVEGACIÓN Y HERRAMIENTAS -->
+  <header class="top-bar no-print">
+    <div class="brand-title">
+      <span>🛠️ MANUAL DEL CONSTRUCTOR POPULAR</span>
+      <span class="brand-badge">COLOMBIA NSR-10</span>
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn btn-outline" id="themeToggle" title="Alternar Modo Oscuro/Claro">
+        <span id="themeIcon">🌙</span> Modo
+      </button>
+      <button class="btn btn-outline" id="simSismoBtn" title="Probar Simulación Sísmica">
+        <span>⚡</span> Probar Sismo
+      </button>
+      <button class="btn btn-primary" onclick="window.print()" title="Imprimir o Guardar como PDF (Carta)">
+        <span>🖨️</span> Imprimir a PDF (Carta)
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR DE HOJA CARTA -->
+  <main class="sheet-wrapper">
+    
+    <!-- PÁGINA 1: PRESENTACIÓN Y ARRIOSTRAMIENTO SÍSMICO -->
+    <article class="manual-page" id="pagina1">
+      <div class="page-header">
+        <div>
+          <div class="series-label">MÓDULO 3: ESTRUCTURAS EN MADERA Y PALAFITOS</div>
+          <h1 class="chapter-main-title">La Estructura que no se Cae: Pies Derechos y Cruces de San Andrés</h1>
+        </div>
+        <div class="normative-pill">
+          <strong>NSR-10:</strong> Título G (G.4 / G.7)
+        </div>
+      </div>
+
+      <!-- Cita del Maestro -->
+      <div class="quote-box">
+        <div class="quote-author">
+          <span>👷🏽</span> Palabra de Maestro de Obra (Buenaventura / Pacífico)
+        </div>
+        <div class="quote-text">
+          "En nuestras riberas la madera es una bendición: fresca, liviana y aguantadora. Pero una casa palafítica no se cae por vieja ni porque la madera sea mala; se cae porque la armaron como una caja de fósforos floja, sin diagonales que la sostengan cuando el viento costero o el temblor la sacuden de medio lado. Hoy vamos a aprender el secreto para que su casa quede tiesa y firme para siempre."
+        </div>
+      </div>
+
+      <!-- Lámina Principal 3.1: Palafito en Madera (100% en Español) -->
+      <figure class="tech-figure">
+        <img src="images/palafito_madera_espanol.jpg" alt="Estructura de Soporte - Palafito de Madera con Cruces de San Andrés" id="imgPalafito" />
+        <figcaption class="fig-caption">
+          <strong>Lámina 3.1:</strong> Despiece técnico axonométrico de una estructura palafítica en madera. Nótese el dado de concreto ciclópeo ($40\times40\text{ cm}$) con pletina en U, las columnas principales (pies derechos), vigas maestras y la <strong>Cruz de San Andrés</strong> para disipar empujes laterales de sismo y viento.
+        </figcaption>
+      </figure>
+
+      <h2 class="section-title"><span>1.</span> El Secreto de la Estabilidad: El Triángulo contra el Sismo</h2>
+      <p>
+        Si usted une cuatro maderos formando un marco cuadrado con un clavo en cada esquina, las cuatro esquinas actúan como bisagras sueltas. Al primer empujón lateral de un sismo o un vendaval, el cuadrado se deforma en un paralelogramo aplastado y el techo se desploma sobre la familia.
+      </p>
+      <p>
+        <strong>El triángulo es la única figura geométrica indeformable de la naturaleza.</strong> Cuando colocamos dos maderos en diagonal cruzados de esquina a esquina formando una <strong>"X" (Cruz de San Andrés)</strong>, el marco queda bloqueado: una diagonal resiste el empuje hacia la derecha trabajando a tracción, y la otra resiste el empuje hacia la izquierda trabajando a compresión.
+      </p>
+
+      <!-- SIMULADOR DINÁMICO DE SISMO Y ARRIOSTRAMIENTO -->
+      <section class="sim-card no-print">
+        <div class="sim-header">
+          <div class="sim-title">
+            <span>🔬 Laboratorio Interactivo:</span>
+            <span>¿Por qué colapsa una casa sin diagonales?</span>
+          </div>
+          <div id="simStatusBadge" class="brand-badge" style="background: var(--accent-danger);">
+            SIN DIAGONALES (INESTABLE)
+          </div>
+        </div>
+
+        <!-- Escenario Canvas / SVG -->
+        <div class="sim-stage" id="stageContainer">
+          <svg id="simSvg" width="360" height="230" viewBox="0 0 360 230" style="overflow: visible;">
+            <!-- Suelo -->
+            <line x1="20" y1="210" x2="340" y2="210" stroke="#71717a" stroke-width="4" stroke-linecap="round" />
+            <line x1="20" y1="216" x2="340" y2="216" stroke="#a1a1aa" stroke-width="2" stroke-dasharray="6,4" />
+            
+            <!-- Dados de Cimentación -->
+            <rect x="70" y="190" width="40" height="20" fill="#94a3b8" stroke="#475569" stroke-width="2" rx="2" />
+            <rect x="250" y="190" width="40" height="20" fill="#94a3b8" stroke="#475569" stroke-width="2" rx="2" />
+
+            <!-- Estructura Dinámica -->
+            <g id="frameGroup">
+              <!-- Diagonales en X (Condicional) -->
+              <g id="bracingGroup" style="opacity: 0; transition: opacity 0.3s ease;">
+                <line id="diag1" x1="90" y1="190" x2="270" y2="50" stroke="#16a34a" stroke-width="7" stroke-linecap="round" />
+                <line id="diag2" x1="270" y1="190" x2="90" y2="50" stroke="#16a34a" stroke-width="7" stroke-linecap="round" />
+              </g>
+
+              <!-- Columna Izquierda -->
+              <line id="colLeft" x1="90" y1="190" x2="90" y2="50" stroke="#b45309" stroke-width="12" stroke-linecap="round" />
+              <!-- Columna Derecha -->
+              <line id="colRight" x1="270" y1="190" x2="270" y2="50" stroke="#b45309" stroke-width="12" stroke-linecap="round" />
+
+              <!-- Viga de Techo Superior -->
+              <line id="beamTop" x1="70" y1="50" x2="290" y2="50" stroke="#78350f" stroke-width="14" stroke-linecap="round" />
+              
+              <!-- Techo y Carga -->
+              <polygon id="roofShape" points="60,50 180,10 300,50" fill="#e2e8f0" stroke="#475569" stroke-width="3" />
+
+              <!-- Alerta de Colapso -->
+              <text id="collapseWarning" x="180" y="115" text-anchor="middle" fill="#dc2626" font-family="Outfit" font-weight="800" font-size="16" style="display: none;">
+                ⚠️ ¡PELIGRO DE COLAPSO!
+              </text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Controles del Simulador -->
+        <div class="sim-controls">
+          <div class="control-group">
+            <label for="shakeRange">Intensidad del Terremoto / Vendaval:</label>
+            <input type="range" id="shakeRange" class="range-slider" min="0" max="100" value="0">
+          </div>
+
+          <div class="control-group">
+            <label>Cruz de San Andrés (Diagonales):</label>
+            <label class="toggle-wrapper">
+              <span class="switch">
+                <input type="checkbox" id="braceToggle">
+                <span class="slider-toggle"></span>
+              </span>
+              <span id="braceLabel" style="font-weight: 600; font-size: 0.85rem;">Desactivadas</span>
+            </label>
+          </div>
+
+          <div>
+            <button class="btn btn-primary" id="shakePulseBtn">
+              🌊 Sacudir Casa
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Alerta Crítica -->
+      <div class="alert-card">
+        <div class="alert-header">
+          <span>⚠️</span> ¡OJO CON ESTO, MAESTRO!
+        </div>
+        <p style="margin-bottom: 0;">
+          Clavar tablas de madera horizontales para la fachada <strong>NO reemplaza las diagonales</strong>. Las puntillas de forro se desprenden ante el primer latigazo sísmico. La norma NSR-10 exige como mínimo <strong>dos paredes con cruces de San Andrés en el sentido largo y dos en el sentido corto</strong> de la vivienda.
+        </p>
+      </div>
+
+      <div class="page-footer">
+        <span>MANUAL DEL CONSTRUCTOR POPULAR COLOMBIANO</span>
+        <span>MÓDULO 3 — PÁGINA 1 DE 2</span>
+      </div>
+    </article>
+
+
+    <!-- PÁGINA 2: ENSAMBLE DE GUADUA INYECTADA Y AISLAMIENTO DE HUMEDAD -->
+    <article class="manual-page" id="pagina2">
+      <div class="page-header">
+        <div>
+          <div class="series-label">MÓDULO 3: ESTRUCTURAS EN MADERA Y PALAFITOS</div>
+          <h2 class="chapter-main-title" style="font-size: 1.75rem;">Ensambles de Bambú-Guadua (NSR-10 G.12) y Protección Palafítica</h2>
+        </div>
+        <div class="normative-pill">
+          <strong>NSR-10:</strong> Título G (Cap. G.12)
+        </div>
+      </div>
+
+      <h2 class="section-title"><span>2.</span> La Regla de Oro: El Canuto con Mortero Inyectado</h2>
+      <p>
+        La guadua (<em>Guadua angustifolia Kunth</em>) es hueca y tiene fibras longitudinales paralelas. Si usted pasa un perno de acero a través de un canuto vacío, el perno actúa como una cuña y raja el culmo en dos mitades con el primer temblor.
+      </p>
+      <p>
+        <strong>El gran invento colombiano de la norma NSR-10 (Capítulo G.12):</strong> Inyectar una mezcla fluida de cemento y arena (1:2) dentro del canuto donde pasa el perno. Al fraguar, el mortero se vuelve una piedra maciza que abraza el perno y hace imposible que la guadua se raje.
+      </p>
+
+      <!-- Lámina Detalle 3.2: Guadua Inyectada en Español -->
+      <figure class="tech-figure">
+        <img src="images/detalle_guadua_inyectada.jpg" alt="Detalle de unión de bambú-guadua con perno pasante y mortero inyectado" id="imgGuadua" />
+        <figcaption class="fig-caption">
+          <strong>Lámina 3.2:</strong> Corte en sección transversal del ensamble sismorresistente. Se aprecia el canuto relleno de mortero fluido 1:2 formando un núcleo macizo indestructible alrededor del perno pasante con arandelas anchas, siempre ubicado junto a un <strong>nudo natural</strong>.
+        </figcaption>
+      </figure>
+
+      <!-- CALCULADORA DE DISTANCIAS DE TALADRADO NSR-10 -->
+      <div class="calc-box no-print">
+        <div class="calc-title">
+          <span>📏</span> Calculadora Rápida del Maestro: Distancias Seguras de Taladrado
+        </div>
+        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+          Seleccione el diámetro del perno pasante para calcular las distancias mínimas para no rajar la madera ni la guadua:
+        </p>
+        <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
+          <label style="font-weight: 600; font-size: 0.85rem;">Diámetro del Perno:</label>
+          <select id="boltSelect" style="padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid var(--border-accent); font-family: var(--font-display); font-weight: 600;">
+            <option value="9.5">3/8 pulgada (9.5 mm)</option>
+            <option value="12.7" selected>1/2 pulgada (12.7 mm) — MÁS COMÚN</option>
+            <option value="15.9">5/8 pulgada (15.9 mm)</option>
+            <option value="19.0">3/4 pulgada (19.0 mm)</option>
+          </select>
+        </div>
+
+        <div class="calc-grid">
+          <div class="calc-card">
+            <div class="calc-num" id="distExtrem">8.9 cm</div>
+            <div class="calc-label">Distancia al extremo libre (7 × d)</div>
+          </div>
+          <div class="calc-card">
+            <div class="calc-num" id="distEntrePernos">5.1 cm</div>
+            <div class="calc-label">Separación entre pernos (4 × d)</div>
+          </div>
+          <div class="calc-card">
+            <div class="calc-num" id="distBorde">2.5 cm</div>
+            <div class="calc-label">Distancia al borde lateral (2 × d)</div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title"><span>3.</span> Maderas Nativas del Pacífico (Limoncito y Guadualito)</h2>
+      <div class="table-container">
+        <table class="tech-table">
+          <thead>
+            <tr>
+              <th>Grupo NSR-10</th>
+              <th>Especies Tradicionales</th>
+              <th>Propiedades Clave</th>
+              <th>Uso en Vivienda Palafítica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ES1 (Muy Pesadas)</strong></td>
+              <td><strong>Nato, Guayacán, Choibá</strong></td>
+              <td>Inmune al agua dulce y salada, resiste comején y hongos</td>
+              <td>Pilotes enterrados, vigas maestras y dados de cimentación</td>
+            </tr>
+            <tr>
+              <td><strong>ES2 (Pesadas)</strong></td>
+              <td><strong>Chanul, Roble, Abarco</strong></td>
+              <td>Alta resistencia a flexión, grano fino y recto</td>
+              <td>Pies derechos (columnas), carreras y viguetas de entrepiso</td>
+            </tr>
+            <tr>
+              <td><strong>ES3 (Medias)</strong></td>
+              <td><strong>Cuángare, Sajo, Otoba, Machare</strong></td>
+              <td>Liviana, fácil clavado y secado rápido</td>
+              <td>Tabiques divisorios, entablado de piso y correas de techo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- LISTA DE CHEQUEO DEL MAESTRO DE OBRA -->
+      <div class="checklist-container">
+        <h3 class="sub-title" style="margin-top: 0; display: flex; align-items: center; justify-content: space-between;">
+          <span>✅ Lista de Chequeo del Maestro (Antes de Montar el Techo)</span>
+          <span id="checkCounter" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--text-muted);">0 / 6 listos</span>
+        </h3>
+        
+        <label class="check-item">
+          <input type="checkbox" class="chk-item">
+          <div class="check-text">
+            <strong>1. ¿Están todos los pies derechos a plomo exacto?</strong>
+            <span>Verificar con plomada en las dos caras de cada columna antes de apretar pernos.</span>
+          </div>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="chk-item">
+          <div class="check-text">
+            <strong>2. ¿Colocó las Cruces de San Andrés en esquinas?</strong>
+            <span>Al menos 2 módulos en X por cada fachada para bloquear el empuje del viento y sismo.</span>
+          </div>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="chk-item">
+          <div class="check-text">
+            <strong>3. ¿Todos los pernos tienen arandela ancha en ambos lados?</strong>
+            <span>Sin arandela, la tuerca se hunde en la madera y aplasta las fibras perdiendo el apriete.</span>
+          </div>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="chk-item">
+          <div class="check-text">
+            <strong>4. ¿Se inyectaron con mortero 1:2 los canutos de guadua empernados?</strong>
+            <span>Golpear con el mango del martillo: debe sonar macizo como una piedra, nunca hueco.</span>
+          </div>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="chk-item">
+          <div class="check-text">
+            <strong>5. ¿La madera está despegada al menos 5 cm del concreto?</strong>
+            <span>Verificar que la pletina en U mantenga la luz libre para que el agua escurra libremente.</span>
+          </div>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="chk-item">
+          <div class="check-text">
+            <strong>6. ¿Se inmunizó la madera contra el comején?</strong>
+            <span>Aplicar sales de boro o preservante en todas las caras y cortes antes del montaje.</span>
+          </div>
+        </label>
+
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>MANUAL DEL CONSTRUCTOR POPULAR COLOMBIANO</span>
+        <span>MÓDULO 3 — PÁGINA 2 DE 2</span>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- LÓGICA INTERACTIVA JAVASCRIPT -->
+  <script>
+    // 1. TEMA OSCURO / CLARO
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.body.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.body.removeAttribute('data-theme');
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.body.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+      themeIcon.textContent = '☀️';
+    }
+
+    // 2. SIMULADOR INTERACTIVO DE SISMO Y ARRIOSTRAMIENTO
+    const shakeRange = document.getElementById('shakeRange');
+    const braceToggle = document.getElementById('braceToggle');
+    const braceLabel = document.getElementById('braceLabel');
+    const simStatusBadge = document.getElementById('simStatusBadge');
+    const bracingGroup = document.getElementById('bracingGroup');
+    const colLeft = document.getElementById('colLeft');
+    const colRight = document.getElementById('colRight');
+    const beamTop = document.getElementById('beamTop');
+    const roofShape = document.getElementById('roofShape');
+    const collapseWarning = document.getElementById('collapseWarning');
+    const diag1 = document.getElementById('diag1');
+    const diag2 = document.getElementById('diag2');
+    const shakePulseBtn = document.getElementById('shakePulseBtn');
+
+    function updatePhysics(intensity) {
+      const hasBracing = braceToggle.checked;
+      const baseLeftX = 90;
+      const baseRightX = 270;
+      const baseY = 190;
+      const topY = 50;
+
+      // Si tiene diagonales, la rigidez reduce la deformación en un 90%
+      const stiffness = hasBracing ? 0.08 : 0.75;
+      const deltaX = (intensity * stiffness);
+
+      // Posiciones deformadas
+      const newTopLeftX = baseLeftX + deltaX;
+      const newTopRightX = baseRightX + deltaX;
+
+      // Actualizar Columnas
+      colLeft.setAttribute('x2', newTopLeftX);
+      colRight.setAttribute('x2', newTopRightX);
+
+      // Actualizar Viga
+      beamTop.setAttribute('x1', newTopLeftX - 20);
+      beamTop.setAttribute('x2', newTopRightX + 20);
+
+      // Actualizar Techo
+      const peakX = (newTopLeftX + newTopRightX) / 2;
+      roofShape.setAttribute('points', `${newTopLeftX - 30},50 ${peakX},10 ${newTopRightX + 30},50`);
+
+      // Actualizar Diagonales
+      if (hasBracing) {
+        diag1.setAttribute('x1', baseLeftX);
+        diag1.setAttribute('y1', baseY);
+        diag1.setAttribute('x2', newTopRightX);
+        diag1.setAttribute('y2', topY);
+
+        diag2.setAttribute('x1', baseRightX);
+        diag2.setAttribute('y1', baseY);
+        diag2.setAttribute('x2', newTopLeftX);
+        diag2.setAttribute('y2', topY);
+      }
+
+      // Alertas y colores
+      if (!hasBracing && intensity > 40) {
+        collapseWarning.style.display = 'block';
+        colLeft.setAttribute('stroke', '#dc2626');
+        colRight.setAttribute('stroke', '#dc2626');
+        simStatusBadge.textContent = '¡COLAPSO INMINENTE!';
+        simStatusBadge.style.background = '#dc2626';
+      } else if (hasBracing) {
+        collapseWarning.style.display = 'none';
+        colLeft.setAttribute('stroke', '#16a34a');
+        colRight.setAttribute('stroke', '#16a34a');
+        simStatusBadge.textContent = 'ESTRUCTURA RÍGIDA Y SEGURA (NSR-10)';
+        simStatusBadge.style.background = '#16a34a';
+      } else {
+        collapseWarning.style.display = 'none';
+        colLeft.setAttribute('stroke', '#b45309');
+        colRight.setAttribute('stroke', '#b45309');
+        simStatusBadge.textContent = 'SIN DIAGONALES (INESTABLE)';
+        simStatusBadge.style.background = '#d97706';
+      }
+    }
+
+    braceToggle.addEventListener('change', () => {
+      if (braceToggle.checked) {
+        bracingGroup.style.opacity = '1';
+        braceLabel.textContent = 'Activas (Cruz de San Andrés)';
+        braceLabel.style.color = '#16a34a';
+      } else {
+        bracingGroup.style.opacity = '0';
+        braceLabel.textContent = 'Desactivadas';
+        braceLabel.style.color = 'inherit';
+      }
+      updatePhysics(parseFloat(shakeRange.value));
+    });
+
+    shakeRange.addEventListener('input', (e) => {
+      updatePhysics(parseFloat(e.target.value));
+    });
+
+    // Animación de pulso sísmico
+    let animId = null;
+    shakePulseBtn.addEventListener('click', () => {
+      let t = 0;
+      if (animId) cancelAnimationFrame(animId);
+
+      function oscillate() {
+        t += 0.15;
+        const amplitude = Math.sin(t) * (1 - t/8) * 80;
+        if (t < 8) {
+          updatePhysics(amplitude);
+          animId = requestAnimationFrame(oscillate);
+        } else {
+          updatePhysics(0);
+          shakeRange.value = 0;
+        }
+      }
+      oscillate();
+    });
+
+    document.getElementById('simSismoBtn').addEventListener('click', () => {
+      document.getElementById('simSismoBtn').scrollIntoView({ behavior: 'smooth' });
+      shakePulseBtn.click();
+    });
+
+    // 3. CALCULADORA DE DISTANCIAS DE PERNOS
+    const boltSelect = document.getElementById('boltSelect');
+    const distExtrem = document.getElementById('distExtrem');
+    const distEntrePernos = document.getElementById('distEntrePernos');
+    const distBorde = document.getElementById('distBorde');
+
+    function updateBoltCalc() {
+      const d = parseFloat(boltSelect.value); // en mm
+      const extremoCm = ((7 * d) / 10).toFixed(1);
+      const entreCm = ((4 * d) / 10).toFixed(1);
+      const bordeCm = ((2 * d) / 10).toFixed(1);
+
+      distExtrem.textContent = `${extremoCm} cm`;
+      distEntrePernos.textContent = `${entreCm} cm`;
+      distBorde.textContent = `${bordeCm} cm`;
+    }
+
+    boltSelect.addEventListener('change', updateBoltCalc);
+    updateBoltCalc();
+
+    // 4. LISTA DE CHEQUEO INTERACTIVA
+    const checkboxes = document.querySelectorAll('.chk-item');
+    const progressBar = document.getElementById('progressBar');
+    const checkCounter = document.getElementById('checkCounter');
+
+    function updateChecklist() {
+      let checkedCount = 0;
+      checkboxes.forEach((cb, idx) => {
+        if (cb.checked) checkedCount++;
+      });
+
+      const total = checkboxes.length;
+      const percent = Math.round((checkedCount / total) * 100);
+      progressBar.style.width = percent + '%';
+      checkCounter.textContent = `${checkedCount} / ${total} listos (${percent}%)`;
+
+      if (percent === 100) {
+        checkCounter.style.color = '#16a34a';
+        checkCounter.textContent = '🎉 ¡100% LISTO PARA TECHAR!';
+      } else {
+        checkCounter.style.color = 'var(--text-muted)';
+      }
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', updateChecklist);
+    });
+  </script>
+</body>
+</html>

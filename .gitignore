@@ -1,0 +1,17 @@
+# Google Drive Virtual Placeholders (shortcuts que solo abren en el cliente local de Drive)
+*.gdoc
+*.gsheet
+*.gslides
+
+# Archivos del Sistema Operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# IDEs y Editores
+.vscode/
+.idea/
+*.swp
+*.bak
