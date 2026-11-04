@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manual del Constructor Popular Colombiano — Capítulo Piloto (Madera y Guadua)</title>
-  
+
   <!-- Tipografías de Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
 
   <style>
     /* =========================================================
        SISTEMA DE DISEÑO Y VARIABLES GLOBALES
        ========================================================= */
     :root {
-      --primary: #d97706;         /* Ámbar tierra constructiva */
+      --primary: #d97706;
+      /* Ámbar tierra constructiva */
       --primary-dark: #b45309;
-      --secondary: #0f766e;       /* Verde pacífico / guadua */
+      --secondary: #0f766e;
+      /* Verde pacífico / guadua */
       --dark: #18181b;
       --dark-card: #27272a;
       --text: #27272a;
@@ -126,6 +131,7 @@
       background: var(--primary);
       color: white;
     }
+
     .btn-primary:hover {
       background: var(--primary-dark);
       transform: translateY(-1px);
@@ -136,6 +142,7 @@
       border-color: var(--border-accent);
       color: var(--text);
     }
+
     .btn-outline:hover {
       background: var(--border);
     }
@@ -278,7 +285,7 @@
       border-radius: 12px;
       padding: 1.5rem;
       margin: 2rem 0;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
     }
 
     .sim-header {
@@ -361,7 +368,10 @@
     .slider-toggle {
       position: absolute;
       cursor: pointer;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background-color: #cbd5e1;
       transition: .3s;
       border-radius: 24px;
@@ -379,11 +389,11 @@
       border-radius: 50%;
     }
 
-    input:checked + .slider-toggle {
+    input:checked+.slider-toggle {
       background-color: var(--accent-success);
     }
 
-    input:checked + .slider-toggle:before {
+    input:checked+.slider-toggle:before {
       transform: translateX(22px);
     }
 
@@ -401,7 +411,7 @@
       border: 1px solid var(--border);
       background: #ffffff;
       padding: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       cursor: zoom-in;
       transition: transform 0.2s ease;
     }
@@ -582,7 +592,9 @@
         font-size: 11pt;
       }
 
-      .top-bar, .sim-controls, .no-print {
+      .top-bar,
+      .sim-controls,
+      .no-print {
         display: none !important;
       }
 
@@ -623,6 +635,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- BARRA SUPERIOR DE NAVEGACIÓN Y HERRAMIENTAS -->
@@ -646,7 +659,7 @@
 
   <!-- CONTENEDOR DE HOJA CARTA -->
   <main class="sheet-wrapper">
-    
+
     <!-- PÁGINA 1: PRESENTACIÓN Y ARRIOSTRAMIENTO SÍSMICO -->
     <article class="manual-page" id="pagina1">
       <div class="page-header">
@@ -662,24 +675,35 @@
       <!-- Cita / Epígrafe -->
       <div class="quote-box">
         <div class="quote-text">
-          "En nuestras riberas la madera es una bendición: fresca, liviana y aguantadora. Pero una casa palafítica no se cae por vieja ni porque la madera sea mala; se cae porque la armaron como una caja de fósforos floja, sin diagonales que la sostengan cuando el viento costero o el temblor la sacuden de medio lado. Hoy vamos a aprender el secreto para que su casa quede tiesa y firme para siempre."
+          "En nuestras riberas la madera es una bendición: fresca, liviana y aguantadora. Pero una casa palafítica no se
+          cae por vieja ni porque la madera sea mala; se cae porque la armaron como una caja de fósforos floja, sin
+          diagonales que la sostengan cuando el viento costero o el temblor la sacuden de medio lado. Hoy vamos a
+          aprender el secreto para que su casa quede tiesa y firme para siempre."
         </div>
       </div>
 
       <!-- Lámina Principal 3.1: Palafito en Madera (100% en Español) -->
       <figure class="tech-figure">
-        <img src="images/palafito_madera_espanol.jpg" alt="Estructura de Soporte - Palafito de Madera con Cruces de San Andrés" id="imgPalafito" />
+        <img src="images/palafito_madera_espanol.jpg"
+          alt="Estructura de Soporte - Palafito de Madera con Cruces de San Andrés" id="imgPalafito" />
         <figcaption class="fig-caption">
-          <strong>Lámina 3.1:</strong> Despiece técnico axonométrico de una estructura palafítica en madera. Nótese el dado de concreto ciclópeo ($40\times40\text{ cm}$) con pletina en U, las columnas principales (pies derechos), vigas maestras y la <strong>Cruz de San Andrés</strong> para disipar empujes laterales de sismo y viento.
+          <strong>Lámina 3.1:</strong> Despiece técnico axonométrico de una estructura palafítica en madera. Nótese el
+          dado de concreto ciclópeo ($40\times40\text{ cm}$) con pletina en U, las columnas principales (pies derechos),
+          vigas maestras y la <strong>Cruz de San Andrés</strong> para disipar empujes laterales de sismo y viento.
         </figcaption>
       </figure>
 
       <h2 class="section-title"><span>1.</span> El Secreto de la Estabilidad: El Triángulo contra el Sismo</h2>
       <p>
-        Si usted une cuatro maderos formando un marco cuadrado con un clavo en cada esquina, las cuatro esquinas actúan como bisagras sueltas. Al primer empujón lateral de un sismo o un vendaval, el cuadrado se deforma en un paralelogramo aplastado y el techo se desploma sobre la familia.
+        Si usted une cuatro maderos formando un marco cuadrado con un clavo en cada esquina, las cuatro esquinas actúan
+        como bisagras sueltas. Al primer empujón lateral de un sismo o un vendaval, el cuadrado se deforma en un
+        paralelogramo aplastado y el techo se desploma sobre la familia.
       </p>
       <p>
-        <strong>El triángulo es la única figura geométrica indeformable de la naturaleza.</strong> Cuando colocamos dos maderos en diagonal cruzados de esquina a esquina formando una <strong>"X" (Cruz de San Andrés)</strong>, el marco queda bloqueado: una diagonal resiste el empuje hacia la derecha trabajando a tracción, y la otra resiste el empuje hacia la izquierda trabajando a compresión.
+        <strong>El triángulo es la única figura geométrica indeformable de la naturaleza.</strong> Cuando colocamos dos
+        maderos en diagonal cruzados de esquina a esquina formando una <strong>"X" (Cruz de San Andrés)</strong>, el
+        marco queda bloqueado: una diagonal resiste el empuje hacia la derecha trabajando a tracción, y la otra resiste
+        el empuje hacia la izquierda trabajando a compresión.
       </p>
 
       <!-- SIMULADOR DINÁMICO DE SISMO Y ARRIOSTRAMIENTO -->
@@ -700,7 +724,7 @@
             <!-- Suelo -->
             <line x1="20" y1="210" x2="340" y2="210" stroke="#71717a" stroke-width="4" stroke-linecap="round" />
             <line x1="20" y1="216" x2="340" y2="216" stroke="#a1a1aa" stroke-width="2" stroke-dasharray="6,4" />
-            
+
             <!-- Dados de Cimentación -->
             <rect x="70" y="190" width="40" height="20" fill="#94a3b8" stroke="#475569" stroke-width="2" rx="2" />
             <rect x="250" y="190" width="40" height="20" fill="#94a3b8" stroke="#475569" stroke-width="2" rx="2" />
@@ -709,23 +733,29 @@
             <g id="frameGroup">
               <!-- Diagonales en X (Condicional) -->
               <g id="bracingGroup" style="opacity: 0; transition: opacity 0.3s ease;">
-                <line id="diag1" x1="90" y1="190" x2="270" y2="50" stroke="#16a34a" stroke-width="7" stroke-linecap="round" />
-                <line id="diag2" x1="270" y1="190" x2="90" y2="50" stroke="#16a34a" stroke-width="7" stroke-linecap="round" />
+                <line id="diag1" x1="90" y1="190" x2="270" y2="50" stroke="#16a34a" stroke-width="7"
+                  stroke-linecap="round" />
+                <line id="diag2" x1="270" y1="190" x2="90" y2="50" stroke="#16a34a" stroke-width="7"
+                  stroke-linecap="round" />
               </g>
 
               <!-- Columna Izquierda -->
-              <line id="colLeft" x1="90" y1="190" x2="90" y2="50" stroke="#b45309" stroke-width="12" stroke-linecap="round" />
+              <line id="colLeft" x1="90" y1="190" x2="90" y2="50" stroke="#b45309" stroke-width="12"
+                stroke-linecap="round" />
               <!-- Columna Derecha -->
-              <line id="colRight" x1="270" y1="190" x2="270" y2="50" stroke="#b45309" stroke-width="12" stroke-linecap="round" />
+              <line id="colRight" x1="270" y1="190" x2="270" y2="50" stroke="#b45309" stroke-width="12"
+                stroke-linecap="round" />
 
               <!-- Viga de Techo Superior -->
-              <line id="beamTop" x1="70" y1="50" x2="290" y2="50" stroke="#78350f" stroke-width="14" stroke-linecap="round" />
-              
+              <line id="beamTop" x1="70" y1="50" x2="290" y2="50" stroke="#78350f" stroke-width="14"
+                stroke-linecap="round" />
+
               <!-- Techo y Carga -->
               <polygon id="roofShape" points="60,50 180,10 300,50" fill="#e2e8f0" stroke="#475569" stroke-width="3" />
 
               <!-- Alerta de Colapso -->
-              <text id="collapseWarning" x="180" y="115" text-anchor="middle" fill="#dc2626" font-family="Outfit" font-weight="800" font-size="16" style="display: none;">
+              <text id="collapseWarning" x="180" y="115" text-anchor="middle" fill="#dc2626" font-family="Outfit"
+                font-weight="800" font-size="16" style="display: none;">
                 ⚠️ ¡PELIGRO DE COLAPSO!
               </text>
             </g>
@@ -764,7 +794,10 @@
           <span>⚠️</span> ¡OJO CON ESTO, MAESTRO!
         </div>
         <p style="margin-bottom: 0;">
-          Clavar tablas de madera horizontales para la fachada <strong>NO reemplaza las diagonales</strong>. Las puntillas de forro se desprenden ante el primer latigazo sísmico. La norma NSR-10 exige como mínimo <strong>dos paredes con cruces de San Andrés en el sentido largo y dos en el sentido corto</strong> de la vivienda.
+          Clavar tablas de madera horizontales para la fachada <strong>NO reemplaza las diagonales</strong>. Las
+          puntillas de forro se desprenden ante el primer latigazo sísmico. La norma NSR-10 exige como mínimo
+          <strong>dos paredes con cruces de San Andrés en el sentido largo y dos en el sentido corto</strong> de la
+          vivienda.
         </p>
       </div>
 
@@ -780,7 +813,8 @@
       <div class="page-header">
         <div>
           <div class="series-label">MÓDULO 3: ESTRUCTURAS EN MADERA Y PALAFITOS</div>
-          <h2 class="chapter-main-title" style="font-size: 1.75rem;">Ensambles de Bambú-Guadua (NSR-10 G.12) y Protección Palafítica</h2>
+          <h2 class="chapter-main-title" style="font-size: 1.75rem;">Ensambles de Bambú-Guadua (NSR-10 G.12) y
+            Protección Palafítica</h2>
         </div>
         <div class="normative-pill">
           <strong>NSR-10:</strong> Título G (Cap. G.12)
@@ -789,17 +823,24 @@
 
       <h2 class="section-title"><span>2.</span> La Regla de Oro: El Canuto con Mortero Inyectado</h2>
       <p>
-        La guadua (<em>Guadua angustifolia Kunth</em>) es hueca y tiene fibras longitudinales paralelas. Si usted pasa un perno de acero a través de un canuto vacío, el perno actúa como una cuña y raja el culmo en dos mitades con el primer temblor.
+        La guadua (<em>Guadua angustifolia Kunth</em>) es hueca y tiene fibras longitudinales paralelas. Si usted pasa
+        un perno de acero a través de un canuto vacío, el perno actúa como una cuña y raja el culmo en dos mitades con
+        el primer temblor.
       </p>
       <p>
-        <strong>El gran invento colombiano de la norma NSR-10 (Capítulo G.12):</strong> Inyectar una mezcla fluida de cemento y arena (1:2) dentro del canuto donde pasa el perno. Al fraguar, el mortero se vuelve una piedra maciza que abraza el perno y hace imposible que la guadua se raje.
+        <strong>El gran invento colombiano de la norma NSR-10 (Capítulo G.12):</strong> Inyectar una mezcla fluida de
+        cemento y arena (1:2) dentro del canuto donde pasa el perno. Al fraguar, el mortero se vuelve una piedra maciza
+        que abraza el perno y hace imposible que la guadua se raje.
       </p>
 
       <!-- Lámina Detalle 3.2: Guadua Inyectada en Español -->
       <figure class="tech-figure">
-        <img src="images/detalle_guadua_inyectada.jpg" alt="Detalle de unión de bambú-guadua con perno pasante y mortero inyectado" id="imgGuadua" />
+        <img src="images/detalle_guadua_inyectada.jpg"
+          alt="Detalle de unión de bambú-guadua con perno pasante y mortero inyectado" id="imgGuadua" />
         <figcaption class="fig-caption">
-          <strong>Lámina 3.2:</strong> Corte en sección transversal del ensamble sismorresistente. Se aprecia el canuto relleno de mortero fluido 1:2 formando un núcleo macizo indestructible alrededor del perno pasante con arandelas anchas, siempre ubicado junto a un <strong>nudo natural</strong>.
+          <strong>Lámina 3.2:</strong> Corte en sección transversal del ensamble sismorresistente. Se aprecia el canuto
+          relleno de mortero fluido 1:2 formando un núcleo macizo indestructible alrededor del perno pasante con
+          arandelas anchas, siempre ubicado junto a un <strong>nudo natural</strong>.
         </figcaption>
       </figure>
 
@@ -809,11 +850,13 @@
           <span>📏</span> Calculadora Rápida del Maestro: Distancias Seguras de Taladrado
         </div>
         <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
-          Seleccione el diámetro del perno pasante para calcular las distancias mínimas para no rajar la madera ni la guadua:
+          Seleccione el diámetro del perno pasante para calcular las distancias mínimas para no rajar la madera ni la
+          guadua:
         </p>
         <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
           <label style="font-weight: 600; font-size: 0.85rem;">Diámetro del Perno:</label>
-          <select id="boltSelect" style="padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid var(--border-accent); font-family: var(--font-display); font-weight: 600;">
+          <select id="boltSelect"
+            style="padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid var(--border-accent); font-family: var(--font-display); font-weight: 600;">
             <option value="9.5">3/8 pulgada (9.5 mm)</option>
             <option value="12.7" selected>1/2 pulgada (12.7 mm) — MÁS COMÚN</option>
             <option value="15.9">5/8 pulgada (15.9 mm)</option>
@@ -873,11 +916,13 @@
 
       <!-- LISTA DE CHEQUEO DEL MAESTRO DE OBRA -->
       <div class="checklist-container">
-        <h3 class="sub-title" style="margin-top: 0; display: flex; align-items: center; justify-content: space-between;">
+        <h3 class="sub-title"
+          style="margin-top: 0; display: flex; align-items: center; justify-content: space-between;">
           <span>✅ Lista de Chequeo del Maestro (Antes de Montar el Techo)</span>
-          <span id="checkCounter" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--text-muted);">0 / 6 listos</span>
+          <span id="checkCounter" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--text-muted);">0
+            / 6 listos</span>
         </h3>
-        
+
         <label class="check-item">
           <input type="checkbox" class="chk-item">
           <div class="check-text">
@@ -944,7 +989,7 @@
     // 1. TEMA OSCURO / CLARO
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    
+
     themeToggle.addEventListener('click', () => {
       const isDark = document.body.getAttribute('data-theme') === 'dark';
       if (isDark) {
@@ -1065,7 +1110,7 @@
 
       function oscillate() {
         t += 0.15;
-        const amplitude = Math.sin(t) * (1 - t/8) * 80;
+        const amplitude = Math.sin(t) * (1 - t / 8) * 80;
         if (t < 8) {
           updatePhysics(amplitude);
           animId = requestAnimationFrame(oscillate);
@@ -1131,4 +1176,5 @@
     });
   </script>
 </body>
+
 </html>

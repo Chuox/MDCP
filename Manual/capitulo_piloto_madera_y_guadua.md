@@ -152,6 +152,106 @@ Durante el sismo de 2026 en el litoral, la gran mayoría de casas palafíticas q
 | **Efecto de la Humedad del Pacífico** | La madera saturada de agua afloja la fibra; el clavo de hierro negro se oxida en 12 meses y pierde 50% de su sección resistente. | Con pernos galvanizados de 1/2", la corrosión es mínima y la madera puede hincharse y contraerse sin aflojarse. |
 | **Rol de la Arandela de Presión (Grower)** | Inexistente. | Absorbe la contracción higroscópica de la madera (cuando se seca bajo el sol húmedo) manteniendo la tensión constante para que la tuerca no se desenrosque con el temblor. |
 
+### 3.3. El Ensamble Maestro: El Rebaje o Hombro de Apoyo en Pilote
+
+El colapso más catastrófico en palafitos durante un terremoto ocurre cuando la viga carguera está clavada simplemente al costado del pilote sin ningún apoyo debajo:
+
+```
+      ERROR FATAL: CORTE PURO                   CONEXIÓN CORRECTA: ENSAMBLE EN HOMBRO
+    (Falla instantánea en sismo)                 (La madera carga sobre la madera)
+
+          [Viga Carguera]                                   [Viga Carguera]
+          +-----------+                                     +-----------+
+          |           |                                     |           |
+          |     o     | <-- Clavos o pernos                 |     O     | <-- Perno pasante 1/2"
+          |     o     |     aguantan TODO el                |           |     con arandela Grower
+    +-----+-----------+                               +-----+-----------+
+    |     |                                           |     |///////////| <-- HOMBRO / REBAJE
+    |     |                                           |     +===========+     (La viga descansa
+    |     |                                           |     |                 sobre 2" a 3" de
+    |     |                                           |     |                 madera viva del pilote)
+    |  P  |                                           |  P  |
+    |  I  |                                           |  I  |
+    |  L  |                                           |  L  |
+    |  O  |                                           |  O  |
+    |  T  |                                           |  T  |
+    |  E  |                                           |  E  |
+    +-----+                                           +-----+
+  ¡EL CLAVO SE PARTE O CORTA LA FIBRA!              ¡LA MADERA TRABAJA A COMPRESIÓN DIRECTA!
+  (La casa se cae al fango)                         (El perno solo mantiene la viga en su sitio)
+```
+
+1. **La regla de oro del hombro:** Ninguna viga maestra debe sostenerse únicamente por pernos o clavos en el aire. La cabeza del pilote debe rebajarse con serrucho y formón entre **5 y 7.5 cm (2" a 3") de profundidad** para crear una repisa horizontal perfecta.
+2. **Transferencia de cargas directa:** Con el hombro, el peso total del piso, las personas y el sismo se transmiten por **compresión directa sobre la fibra de la madera**, donde la madera es 10 veces más resistente. El perno pasante de 1/2" únicamente amarra los elementos para que no se separen de lado.
+
+---
+
+### 3.4. El Entramado de Piso: Creando un Diafragma Rígido Horizontal
+
+El piso de la casa palafítica no es solo para caminar: es la placa que amarra todos los pilotes en la cabeza para que se muevan juntos durante el terremoto. Si el piso es flojo, los pilotes oscilan como dientes sueltos en distintas direcciones y fracturan la casa.
+
+```
+                  DISTRIBUCIÓN DEL ENTRAMADO DE PISO PALAFÍTICO
+
+             +---------------------------------------------+  [Pilote de esquina]
+             | [Viga Maestra Carguera: 4"x6" o 3"x6"]      |
+             +=======+==============+==============+=======+
+             |       |              |              |       |
+             |       | Viguetas     | Viguetas     |       |
+             |       | secundarias  | secundarias  |       |
+             |       | (2"x4" o     | (Separadas   |       |
+             |       |  2"x5")      |  40 a 50 cm) |       |
+             |       |              |              |       |
+             +=======+==============+==============+=======+
+             | [Viga Maestra Carguera: 4"x6" o 3"x6"]      |
+             +---------------------------------------------+
+               ▲                                           ▲
+               |======== Entablado clavado a 90° =========|
+               (Tablas de 1" machihembradas o entablado simple con 2 clavos por vigueta)
+```
+
+* **Vigas Cargueras Principales:** Escuadría mínima de **$3" \times 6"$ o $4" \times 6"$** (Nato o Chanul), apoyadas sobre los hombros de los pilotes.
+* **Viguetas Secundarias:** Listones de **$2" \times 4"$ o $2" \times 5"$** colocados de canto cada **40 a 50 cm** de centro a centro. Si se separan a más de 50 cm, la madera del piso se flecta ("baila") y vibra al caminar.
+* **El Entablado Clavado:** Tablas de $1" \times 8"$ o machihembrado fijadas con al menos **dos clavos de $2\frac{1}{2}"$ en cada cruce con una vigueta**. Esto convierte el piso en un diafragma plano que reparte las fuerzas del sismo a todas las columnas.
+
+---
+
+### 3.5. Cruces de San Andrés ($X$) en la Zona de Pilotes: El Freno Sísmico
+
+El piso elevado de un palafito (entre 1.5 y 2.8 m sobre el fango) deja los pilotes desprotegidos como patas largas de araña. Durante un sismo de magnitud 7+, la inercia del techo y del piso sacude la casa hacia adelante y atrás. Sin diagonales, los pilotes se quiebran justo en la línea de fango o en el ensamble del piso.
+
+```
+             ARRIOSTRAMIENTO EN "X" ENTRE PILOTES (ZONA PALAFÍTICA)
+
+               [Viga Maestra del Piso]           [Viga Maestra del Piso]
+               +-------------------------------------------------------+
+               |                       ^                               |
+               |                       | Perno pasante 1/2" con arandela
+               | \                   / |                               |
+               |   \               /   |                               |
+               |     \           /     |                               |
+               |       \       /       |                               |
+       Pilote  |         \   /         | Perno central en cruce de "X" Pilote
+       de Nato |           X           |                               de Nato
+       (ES1)   |         /   \         |                               (ES1)
+               |       /       \       |                               |
+               |     /           \     |                               |
+               |   /               \   |                               |
+               | /                   \ |                               |
+               +-----------------------+-------------------------------+
+               |                       |                               |
+        ~~~~~~~~~~~~~~~~ Nivel de Marea Máxima (HAT +5.31 m) ~~~~~~~~~~~~~~~~
+        ================ Nivel del Fango / Suelo Aluvial ====================
+               |                                                       |
+               | (Pilote hincado 2 a 3 m en estrato firme de arena)    |
+```
+
+* **Escuadría de las Diagonales:** Madera densa (Chanul o Mangle) de mínimo **$2" \times 4"$** o tablones gruesos de **$1.5" \times 5"$**.
+* **Ángulo Óptimo:** La diagonal debe formar un ángulo entre **$35^\circ$ y $55^\circ$** con la horizontal (el ángulo ideal es de $45^\circ$).
+* **Fijación en los Extremos:** Conectada con perno pasante de 1/2" tanto en la parte superior (contra la viga carguera o cabeza del pilote) como en la parte inferior (al menos 30 cm por encima del nivel más alto del fango para no pudrirse).
+* **Perno en el Cruce Central:** En el punto donde se intersectan las dos ramas de la "X", colocar un perno pasante de 3/8" o 1/2". Esto reduce la longitud no soportada de la diagonal a la mitad, impidiendo que se doble por pandeo cuando entra en compresión.
+* **Cantidad Mínima Obligatoria:** Mínimo **dos paneles con Cruces de San Andrés en cada fachada longitudinal y dos en cada fachada transversal**.
+
 ---
 
 ## 4. El Bambú-Guadua: La Regla de Oro del Canuto con Mortero (NSR-10 Capítulo G.12)
@@ -272,20 +372,56 @@ Para no construir a ciegas, la altura del palafito en la cuenca del Río Dagua s
 
 ---
 
-## 7. Lista de Chequeo del Maestro de Obra (Antes de Montar el Techo)
+## 7. Techos Tropicales y Resistencia a Vientos Fuertes (NSR-10 Capítulo G.7)
 
-Antes de dar por terminada la estructura vertical y empezar a clavar el piso o la cubierta, revise punto por punto:
+En el Litoral Pacífico, la lluvia cae con una intensidad descomunal (>6.000 mm anuales) acompañada de vendavales costeros. Un techo mal diseñado pudre las paredes en dos inviernos o sale volando con el primer ventarrón.
+
+```
+                    EL TECHO TROPICAL CON PROTECCIÓN POR DISEÑO
+
+                      Láminas de zinc con clavo paraguas
+                      y golilla de caucho EN LA CRESTA
+                                 ▲
+                     /============\============\
+                    /              \            \
+                   /   [Cercha en   \            \
+                  /     Pendolón]    \            \
+                 /                    \            \
+                /                      \            \
+          +----+------------------------+----+       \
+          |    |  [Solera Superior]     |    |        \
+          |                                            \ <--- ALERO DE SEGURIDAD
+          |    |                        |    |                (Mínimo 80 a 120 cm)
+          |    |                        |    |                ¡Protege la pared de madera
+          |    |  Pared protegida       |    |                 de la lluvia batiente!
+          |    |  del sol y lluvia      |    |
+```
+
+### 7.1. Los Tres Mandamientos del Techo en el Pacífico:
+
+1. **Aleros Amplios ($\ge 1.0\text{ m}$):** Las cubiertas deben volar al menos **1.0 metro por fuera del borde de la pared**. Un alero corto expone las tablas de fachada al agua permanente, pudriendo las cabezas de las vigas y soleras.
+2. **Flejes Metálicos Anti-Huracán:** No confíe el amarre de las cerchas a clavos lanzados de lado. Utilice flejes de lámina galvanizada perforada de $1\frac{1}{2}"$ o pletinas de amarre que abracen la cercha y la solera superior con pernos o clavos transversales.
+3. **Clavado en la Cresta de la Onda:** Al clavar láminas de zinc o fibrocemento, el clavo paraguas con arandela de neopreno debe clavarse **SIEMPRE en la parte alta (cresta) de la onda**. Si se clava en el valle (fondo), el agua que baja por la canaleta entra directo por el agujero del clavo y pudre las correas de madera.
+
+---
+
+## 8. Lista de Chequeo del Maestro de Obra (Antes de Entregar la Estructura)
+
+Antes de dar por terminada la estructura palafítica y techada, verifique minuciosamente:
 
 - [ ] **¿Están todas las columnas a plomo?** Verificar con plomada en las dos caras de cada pie derecho.
-- [ ] **¿Hay Cruces de San Andrés en las esquinas?** Comprobar que en cada fachada haya al menos dos paneles triangulados con diagonales firmes.
-- [ ] **¿Todos los pernos tienen arandela ancha en ambos lados?** Ningún perno debe estar directo sobre la madera sin arandela.
+- [ ] **¿Las vigas maestras descansan sobre un hombro tallado en el pilote?** Ninguna viga carguera debe depender de pernos al aire.
+- [ ] **¿Hay Cruces de San Andrés en la zona de pilotes y en esquinas?** Comprobar al menos dos paneles triangulados en sentido largo y dos en sentido corto.
+- [ ] **¿Todos los pernos tienen arandelas anchas y arandela de presión (Grower)?** Ningún perno debe estar directo sobre la madera sin arandela.
 - [ ] **¿Se rellenaron con mortero todos los canutos de guadua donde pasan pernos?** Golpear suavemente con el cabo del martillo: debe sonar macizo como una piedra, nunca hueco.
-- [ ] **¿Las bases de las columnas están despegadas del suelo?** Verificar que ninguna pieza de madera o guadua esté enterrada en tierra o en contacto directo con agua estancada.
+- [ ] **¿La cota de piso está mínimo a 2.20 m sobre el fango?** Asegurar que supere la máxima marea viva (HAT +5.31 m) y borrascas del río Dagua.
+- [ ] **¿Las bases de las columnas están despegadas del suelo?** Verificar la luz libre de 5 cm sobre dados de concreto o el uso de Nato resistente al agua.
+- [ ] **¿Los aleros de techo vuelan al menos 1.0 metro?** Evitar que la lluvia batiente moje continuamente las paredes de madera.
 - [ ] **¿Se inmunizó la madera contra el comején?** Aplicación de protector insecticida y fungicida en todas las caras y cortes antes del montaje.
 
 ---
 
-## 8. Guía de Taller de Campo: Diálogo de Saberes con Carpinteros de Ribera
+## 9. Guía de Taller de Campo: Diálogo de Saberes con Carpinteros de Ribera
 
 Esta sección contiene la metodología participativa para la sesión práctica de validación comunitaria en Guadualito y Limoncito:
 
@@ -327,5 +463,5 @@ Anotar en el cuaderno de campo las palabras exactas con las que los maestros loc
 ---
 
 > [!TIP]
-> **Próxima Lección (Módulo 3.7):**  
-> En el siguiente subcapítulo aprenderemos a armar las cerchas ligeras de cubierta (*tipo Howe y Pendolón*), cómo calcular los aleros de 1 metro para que la lluvia no moje las paredes y cómo anclar las láminas de zinc con ganchos anti-huracán para que los vendavales del Pacífico no se lleven el techo.
+> **Próxima Lección (Módulo 1.2 y Módulo 4):**  
+> En los siguientes capítulos desarrollaremos el método de nivelación con manguera de agua en fango aluvial referenciado a la cota de marea viva (HAT +5.31 m), y el diseño de la trampa de primer litro (*first flush*) para captación de agua lluvia segura ante la contaminación de fuentes hídricas tras el sismo.
