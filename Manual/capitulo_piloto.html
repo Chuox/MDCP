@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manual del Constructor Popular Colombiano — Capítulo Piloto (Madera y Guadua)</title>
+  <title>Manual del Constructor Popular Colombiano — Módulo 3: Madera y Guadua (NSR-10)</title>
   
   <!-- Tipografías de Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,7 @@
       --primary: #d97706;         /* Ámbar tierra constructiva */
       --primary-dark: #b45309;
       --secondary: #0f766e;       /* Verde pacífico / guadua */
+      --secondary-dark: #115e59;
       --dark: #18181b;
       --dark-card: #27272a;
       --text: #27272a;
@@ -66,10 +67,10 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      padding: 0.75rem 1.5rem;
+      padding: 0.65rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -77,13 +78,13 @@
     }
 
     [data-theme="dark"] .top-bar {
-      background: rgba(24, 24, 27, 0.88);
+      background: rgba(24, 24, 27, 0.92);
     }
 
     .brand-title {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -93,7 +94,7 @@
     .brand-badge {
       background: var(--primary);
       color: white;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 800;
       padding: 0.15rem 0.5rem;
       border-radius: 9999px;
@@ -101,22 +102,46 @@
       letter-spacing: 0.05em;
     }
 
+    .page-nav-pills {
+      display: flex;
+      gap: 0.35rem;
+      align-items: center;
+    }
+
+    .page-nav-pills a {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+
+    .page-nav-pills a:hover {
+      color: var(--primary-dark);
+      border-color: var(--primary);
+      background: rgba(217, 119, 6, 0.08);
+    }
+
     .toolbar-actions {
       display: flex;
-      gap: 0.75rem;
+      gap: 0.6rem;
       align-items: center;
     }
 
     .btn {
       font-family: var(--font-display);
       font-weight: 600;
-      font-size: 0.85rem;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
+      font-size: 0.82rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 0.45rem;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
       transition: all 0.2s ease;
       border: 1px solid transparent;
       text-decoration: none;
@@ -142,7 +167,7 @@
 
     /* CONTENEDOR PRINCIPAL TIPO CARTILLA (HOJA CARTA) */
     .sheet-wrapper {
-      max-width: 960px;
+      max-width: 980px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
@@ -152,7 +177,7 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       box-shadow: var(--paper-shadow);
-      padding: 3.5rem 4rem;
+      padding: 3rem 3.5rem;
       margin-bottom: 2.5rem;
       position: relative;
       overflow: hidden;
@@ -161,8 +186,8 @@
     /* ENCABEZADO DE PÁGINA */
     .page-header {
       border-bottom: 2px solid var(--text);
-      padding-bottom: 1.25rem;
-      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1.75rem;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -171,7 +196,7 @@
     .series-label {
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--primary);
@@ -179,7 +204,7 @@
 
     .chapter-main-title {
       font-family: var(--font-display);
-      font-size: 2rem;
+      font-size: 1.85rem;
       font-weight: 800;
       line-height: 1.15;
       color: var(--text);
@@ -194,81 +219,116 @@
       padding: 0.35rem 0.75rem;
       border-radius: 6px;
       border-left: 3px solid var(--secondary);
+      white-space: nowrap;
     }
 
-    /* BLOQUE "PALABRA DE MAESTRO" (CITA EDITORIAL POPULAR) */
+    /* BLOQUE CITA / EPÍGRAFE */
     .quote-box {
       background: rgba(217, 119, 6, 0.06);
       border-left: 4px solid var(--primary);
       padding: 1.25rem 1.75rem;
       border-radius: 0 10px 10px 0;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       position: relative;
-    }
-
-    .quote-author {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--primary-dark);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.4rem;
     }
 
     .quote-text {
       font-style: italic;
       color: var(--text);
-      font-size: 1rem;
+      font-size: 0.98rem;
       line-height: 1.6;
     }
 
     /* SECCIONES Y TÍTULOS */
     h2.section-title {
       font-family: var(--font-display);
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      margin: 2.25rem 0 1rem 0;
-      padding-bottom: 0.4rem;
+      margin: 2rem 0 0.85rem 0;
+      padding-bottom: 0.35rem;
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
     }
 
     h3.sub-title {
       font-family: var(--font-display);
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 600;
-      margin: 1.5rem 0 0.75rem 0;
+      margin: 1.35rem 0 0.65rem 0;
       color: var(--secondary);
     }
 
     p {
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
       color: var(--text);
-      font-size: 0.98rem;
+      font-size: 0.96rem;
+    }
+
+    ul, ol {
+      margin-left: 1.4rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
     }
 
     /* CAJAS DE ALERTA POPULAR (¡PILAS CON ESTO!) */
     .alert-card {
       border: 2px dashed var(--accent-danger);
       background: rgba(220, 38, 38, 0.04);
-      padding: 1.25rem 1.5rem;
+      padding: 1.15rem 1.4rem;
       border-radius: 8px;
-      margin: 1.75rem 0;
+      margin: 1.5rem 0;
     }
 
     .alert-header {
       font-family: var(--font-display);
       font-weight: 800;
       color: var(--accent-danger);
-      font-size: 1.05rem;
+      font-size: 1rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* CONSEJOS Y PRUEBAS DE CAMPO */
+    .tip-card {
+      border-left: 4px solid var(--secondary);
+      background: rgba(15, 118, 110, 0.05);
+      padding: 1.15rem 1.4rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+
+    .tip-header {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--secondary);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* DIAGRAMAS ASCII EDUCATIVOS */
+    .ascii-diagram {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.35;
+      background: var(--bg);
+      border: 1px solid var(--border-accent);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      overflow-x: auto;
+      color: var(--text);
+      white-space: pre;
     }
 
     /* SECCIÓN DE SIMULADOR INTERACTIVO */
@@ -276,8 +336,8 @@
       background: var(--bg);
       border: 1px solid var(--border-accent);
       border-radius: 12px;
-      padding: 1.5rem;
-      margin: 2rem 0;
+      padding: 1.25rem;
+      margin: 1.75rem 0;
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
     }
 
@@ -285,13 +345,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
     }
 
     .sim-title {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -301,13 +361,13 @@
       background: #ffffff;
       border: 2px solid #cbd5e1;
       border-radius: 8px;
-      height: 280px;
+      height: 250px;
       position: relative;
       overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      padding-bottom: 20px;
+      padding-bottom: 15px;
     }
 
     [data-theme="dark"] .sim-stage {
@@ -319,7 +379,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr auto;
       gap: 1rem;
-      margin-top: 1.25rem;
+      margin-top: 1rem;
       align-items: center;
     }
 
@@ -327,8 +387,8 @@
       display: block;
       font-family: var(--font-display);
       font-weight: 600;
-      font-size: 0.8rem;
-      margin-bottom: 0.3rem;
+      font-size: 0.78rem;
+      margin-bottom: 0.25rem;
       color: var(--text-muted);
     }
 
@@ -348,8 +408,8 @@
     .switch {
       position: relative;
       display: inline-block;
-      width: 46px;
-      height: 24px;
+      width: 44px;
+      height: 22px;
     }
 
     .switch input {
@@ -364,14 +424,14 @@
       top: 0; left: 0; right: 0; bottom: 0;
       background-color: #cbd5e1;
       transition: .3s;
-      border-radius: 24px;
+      border-radius: 22px;
     }
 
     .slider-toggle:before {
       position: absolute;
       content: "";
-      height: 18px;
-      width: 18px;
+      height: 16px;
+      width: 16px;
       left: 3px;
       bottom: 3px;
       background-color: white;
@@ -389,13 +449,13 @@
 
     /* ESTILO DE IMÁGENES TÉCNICAS */
     .tech-figure {
-      margin: 2rem 0;
+      margin: 1.75rem 0;
       text-align: center;
     }
 
     .tech-figure img {
       width: 100%;
-      max-height: 580px;
+      max-height: 520px;
       object-fit: contain;
       border-radius: 8px;
       border: 1px solid var(--border);
@@ -407,13 +467,13 @@
     }
 
     .tech-figure img:hover {
-      transform: scale(1.01);
+      transform: scale(1.008);
     }
 
     .fig-caption {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      margin-top: 0.6rem;
+      margin-top: 0.5rem;
       font-style: italic;
     }
 
@@ -424,7 +484,7 @@
     /* TABLAS TÉCNICAS LIMPIAS */
     .table-container {
       overflow-x: auto;
-      margin: 1.5rem 0;
+      margin: 1.25rem 0;
       border: 1px solid var(--border);
       border-radius: 8px;
     }
@@ -432,7 +492,7 @@
     table.tech-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       text-align: left;
     }
 
@@ -441,13 +501,14 @@
       font-family: var(--font-display);
       font-weight: 700;
       color: var(--text);
-      padding: 0.75rem 1rem;
+      padding: 0.65rem 0.85rem;
       border-bottom: 2px solid var(--border);
     }
 
     table.tech-table td {
-      padding: 0.75rem 1rem;
+      padding: 0.65rem 0.85rem;
       border-bottom: 1px solid var(--border);
+      vertical-align: top;
     }
 
     table.tech-table tr:last-child td {
@@ -459,49 +520,49 @@
       background: rgba(15, 118, 110, 0.05);
       border: 1px solid var(--secondary);
       border-radius: 10px;
-      padding: 1.5rem;
-      margin: 1.75rem 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
     }
 
     .calc-title {
       font-family: var(--font-display);
       font-weight: 700;
       color: var(--secondary);
-      font-size: 1.05rem;
-      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      margin-bottom: 0.65rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .calc-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.85rem;
+      margin-top: 0.85rem;
     }
 
     .calc-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 1rem;
+      padding: 0.85rem;
       border-radius: 6px;
       text-align: center;
     }
 
     .calc-num {
       font-family: var(--font-mono);
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: var(--primary-dark);
     }
 
     .calc-label {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--text-muted);
       text-transform: uppercase;
       font-weight: 600;
-      margin-top: 0.25rem;
+      margin-top: 0.2rem;
     }
 
     /* LISTA DE CHEQUEO INTERACTIVA */
@@ -510,14 +571,14 @@
       border: 2px solid var(--border);
       border-radius: 10px;
       padding: 1.5rem;
-      margin: 2rem 0;
+      margin: 1.75rem 0;
     }
 
     .check-item {
       display: flex;
       align-items: flex-start;
       gap: 0.75rem;
-      padding: 0.75rem 0;
+      padding: 0.65rem 0;
       border-bottom: 1px dashed var(--border);
       cursor: pointer;
     }
@@ -527,8 +588,8 @@
     }
 
     .check-item input[type="checkbox"] {
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 1.2rem;
+      height: 1.2rem;
       margin-top: 0.15rem;
       accent-color: var(--secondary);
       cursor: pointer;
@@ -538,10 +599,11 @@
       font-family: var(--font-display);
       display: block;
       color: var(--text);
+      font-size: 0.94rem;
     }
 
     .check-text span {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
     }
 
@@ -563,11 +625,11 @@
     /* PIE DE PÁGINA DE EDICIÓN */
     .page-footer {
       border-top: 1px solid var(--border);
-      padding-top: 1.25rem;
-      margin-top: 3rem;
+      padding-top: 1rem;
+      margin-top: 2.5rem;
       display: flex;
       justify-content: space-between;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
       font-family: var(--font-mono);
     }
@@ -579,7 +641,7 @@
       body {
         background: #ffffff !important;
         color: #000000 !important;
-        font-size: 11pt;
+        font-size: 10.5pt;
       }
 
       .top-bar, .sim-controls, .no-print {
@@ -595,30 +657,14 @@
       .manual-page {
         border: none !important;
         box-shadow: none !important;
-        padding: 12mm 15mm !important;
+        padding: 10mm 12mm !important;
         margin: 0 !important;
         page-break-after: always;
       }
 
-      .tech-figure img {
-        max-height: 400px !important;
-        border: 1px solid #000 !important;
-        box-shadow: none !important;
-      }
-
-      .quote-box {
-        background: #f4f4f5 !important;
-        border-left: 4px solid #000 !important;
-      }
-
-      .alert-card {
-        border: 2px solid #000 !important;
-        background: #fafafa !important;
-      }
-
-      @page {
-        size: letter portrait;
-        margin: 10mm;
+      .page-footer {
+        border-top: 1px solid #000;
+        color: #000;
       }
     }
   </style>
@@ -626,17 +672,26 @@
 <body>
 
   <!-- BARRA SUPERIOR DE NAVEGACIÓN Y HERRAMIENTAS -->
-  <header class="top-bar no-print">
+  <header class="top-bar">
     <div class="brand-title">
-      <span>🛠️ MANUAL DEL CONSTRUCTOR POPULAR</span>
-      <span class="brand-badge">COLOMBIA NSR-10</span>
+      <span>📐</span>
+      <span>Manual del Constructor Popular</span>
+      <span class="brand-badge">NSR-10 Módulo 3</span>
     </div>
+
+    <!-- Acceso rápido a páginas -->
+    <nav class="page-nav-pills no-print">
+      <a href="#pagina1" title="Ir a Pág 1: Arriostramiento">Pág 1</a>
+      <a href="#pagina2" title="Ir a Pág 2: Maderas">Pág 2</a>
+      <a href="#pagina3" title="Ir a Pág 3: Uniones y Hombro">Pág 3</a>
+      <a href="#pagina4" title="Ir a Pág 4: Piso y Mareas">Pág 4</a>
+      <a href="#pagina5" title="Ir a Pág 5: Guadua">Pág 5</a>
+      <a href="#pagina6" title="Ir a Pág 6: Techos y Taller">Pág 6</a>
+    </nav>
+
     <div class="toolbar-actions">
-      <button class="btn btn-outline" id="themeToggle" title="Alternar Modo Oscuro/Claro">
-        <span id="themeIcon">🌙</span> Modo
-      </button>
-      <button class="btn btn-outline" id="simSismoBtn" title="Probar Simulación Sísmica">
-        <span>⚡</span> Probar Sismo
+      <button class="btn btn-outline" id="themeToggle" title="Modo Oscuro / Claro">
+        <span id="themeIcon">🌙</span>
       </button>
       <button class="btn btn-primary" onclick="window.print()" title="Imprimir o Guardar como PDF (Carta)">
         <span>🖨️</span> Imprimir a PDF (Carta)
@@ -647,7 +702,9 @@
   <!-- CONTENEDOR DE HOJA CARTA -->
   <main class="sheet-wrapper">
     
-    <!-- PÁGINA 1: PRESENTACIÓN Y ARRIOSTRAMIENTO SÍSMICO -->
+    <!-- =========================================================
+         PÁGINA 1: PRESENTACIÓN, EL TRIÁNGULO Y ARRIOSTRAMIENTO SÍSMICO
+         ========================================================= -->
     <article class="manual-page" id="pagina1">
       <div class="page-header">
         <div>
@@ -655,7 +712,7 @@
           <h1 class="chapter-main-title">La Estructura que no se Cae: Pies Derechos y Cruces de San Andrés</h1>
         </div>
         <div class="normative-pill">
-          <strong>NSR-10:</strong> Título G (G.4 / G.7)
+          <strong>NSR-10:</strong> Título G (Cap. G.4 y G.7)
         </div>
       </div>
 
@@ -676,8 +733,28 @@
 
       <h2 class="section-title"><span>1.</span> El Secreto de la Estabilidad: El Triángulo contra el Sismo</h2>
       <p>
-        Si usted une cuatro maderos formando un marco cuadrado con un clavo en cada esquina, las cuatro esquinas actúan como bisagras sueltas. Al primer empujón lateral de un sismo o un vendaval, el cuadrado se deforma en un paralelogramo aplastado y el techo se desploma sobre la familia.
+        Si usted une cuatro maderos formando un marco cuadrado con un solo clavo en cada esquina, las cuatro esquinas actúan como bisagras sueltas. Al primer empujón lateral de un sismo o un vendaval, el cuadrado se deforma en un paralelogramo aplastado y el techo se desploma sobre la familia.
       </p>
+
+      <div class="ascii-diagram">
+    ESTRUCTURA SIN DIAGONAL                    ESTRUCTURA CON DIAGONAL
+    (Se deforma y se cae)                      (Triángulo rígido e indeformable)
+
+         [Carrera de Techo]                         [Carrera de Techo]
+         +-----------------+                        +-----------------+
+         |                 |   EMPUJE DE            | \             / |   EMPUJE DE
+         |                 |   VIENTO O             |   \         /   |   VIENTO O
+         |                 |   TEMBLOR              |     \     /     |   TEMBLOR
+         |                 |   ========>            |       \ /       |   ========>
+         |                 |                        |       / \       |
+         +-----------------+                        |     /     \     |
+          [Solera de Piso]                          |   /         \   |
+                                                    | /             \ |
+       ¡SE APLASTA DE MEDIO LADO!                   +-----------------+
+    (Las esquinas no aguantan el empuje)             [Solera de Piso]
+                                                  ¡LAS CRUCES TRABAN EL MOVIMIENTO!
+      </div>
+
       <p>
         <strong>El triángulo es la única figura geométrica indeformable de la naturaleza.</strong> Cuando colocamos dos maderos en diagonal cruzados de esquina a esquina formando una <strong>"X" (Cruz de San Andrés)</strong>, el marco queda bloqueado: una diagonal resiste el empuje hacia la derecha trabajando a tracción, y la otra resiste el empuje hacia la izquierda trabajando a compresión.
       </p>
@@ -694,51 +771,34 @@
           </div>
         </div>
 
-        <!-- Escenario Canvas / SVG -->
         <div class="sim-stage" id="stageContainer">
-          <svg id="simSvg" width="360" height="230" viewBox="0 0 360 230" style="overflow: visible;">
-            <!-- Suelo -->
-            <line x1="20" y1="210" x2="340" y2="210" stroke="#71717a" stroke-width="4" stroke-linecap="round" />
-            <line x1="20" y1="216" x2="340" y2="216" stroke="#a1a1aa" stroke-width="2" stroke-dasharray="6,4" />
-            
-            <!-- Dados de Cimentación -->
-            <rect x="70" y="190" width="40" height="20" fill="#94a3b8" stroke="#475569" stroke-width="2" rx="2" />
-            <rect x="250" y="190" width="40" height="20" fill="#94a3b8" stroke="#475569" stroke-width="2" rx="2" />
+          <svg id="simSvg" width="360" height="210" viewBox="0 0 360 210" style="overflow: visible;">
+            <line x1="20" y1="190" x2="340" y2="190" stroke="#71717a" stroke-width="4" stroke-linecap="round" />
+            <line x1="20" y1="196" x2="340" y2="196" stroke="#a1a1aa" stroke-width="2" stroke-dasharray="6,4" />
+            <rect x="70" y="170" width="40" height="20" fill="#94a3b8" stroke="#475569" stroke-width="2" rx="2" />
+            <rect x="250" y="170" width="40" height="20" fill="#94a3b8" stroke="#475569" stroke-width="2" rx="2" />
 
-            <!-- Estructura Dinámica -->
             <g id="frameGroup">
-              <!-- Diagonales en X (Condicional) -->
               <g id="bracingGroup" style="opacity: 0; transition: opacity 0.3s ease;">
-                <line id="diag1" x1="90" y1="190" x2="270" y2="50" stroke="#16a34a" stroke-width="7" stroke-linecap="round" />
-                <line id="diag2" x1="270" y1="190" x2="90" y2="50" stroke="#16a34a" stroke-width="7" stroke-linecap="round" />
+                <line id="diag1" x1="90" y1="170" x2="270" y2="40" stroke="#16a34a" stroke-width="7" stroke-linecap="round" />
+                <line id="diag2" x1="270" y1="170" x2="90" y2="40" stroke="#16a34a" stroke-width="7" stroke-linecap="round" />
               </g>
-
-              <!-- Columna Izquierda -->
-              <line id="colLeft" x1="90" y1="190" x2="90" y2="50" stroke="#b45309" stroke-width="12" stroke-linecap="round" />
-              <!-- Columna Derecha -->
-              <line id="colRight" x1="270" y1="190" x2="270" y2="50" stroke="#b45309" stroke-width="12" stroke-linecap="round" />
-
-              <!-- Viga de Techo Superior -->
-              <line id="beamTop" x1="70" y1="50" x2="290" y2="50" stroke="#78350f" stroke-width="14" stroke-linecap="round" />
-              
-              <!-- Techo y Carga -->
-              <polygon id="roofShape" points="60,50 180,10 300,50" fill="#e2e8f0" stroke="#475569" stroke-width="3" />
-
-              <!-- Alerta de Colapso -->
-              <text id="collapseWarning" x="180" y="115" text-anchor="middle" fill="#dc2626" font-family="Outfit" font-weight="800" font-size="16" style="display: none;">
+              <line id="colLeft" x1="90" y1="170" x2="90" y2="40" stroke="#b45309" stroke-width="12" stroke-linecap="round" />
+              <line id="colRight" x1="270" y1="170" x2="270" y2="40" stroke="#b45309" stroke-width="12" stroke-linecap="round" />
+              <line id="beamTop" x1="70" y1="40" x2="290" y2="40" stroke="#78350f" stroke-width="14" stroke-linecap="round" />
+              <polygon id="roofShape" points="60,40 180,10 300,40" fill="#e2e8f0" stroke="#475569" stroke-width="3" />
+              <text id="collapseWarning" x="180" y="105" text-anchor="middle" fill="#dc2626" font-family="Outfit" font-weight="800" font-size="16" style="display: none;">
                 ⚠️ ¡PELIGRO DE COLAPSO!
               </text>
             </g>
           </svg>
         </div>
 
-        <!-- Controles del Simulador -->
         <div class="sim-controls">
           <div class="control-group">
             <label for="shakeRange">Intensidad del Terremoto / Vendaval:</label>
             <input type="range" id="shakeRange" class="range-slider" min="0" max="100" value="0">
           </div>
-
           <div class="control-group">
             <label>Cruz de San Andrés (Diagonales):</label>
             <label class="toggle-wrapper">
@@ -749,7 +809,6 @@
               <span id="braceLabel" style="font-weight: 600; font-size: 0.85rem;">Desactivadas</span>
             </label>
           </div>
-
           <div>
             <button class="btn btn-primary" id="shakePulseBtn">
               🌊 Sacudir Casa
@@ -770,46 +829,383 @@
 
       <div class="page-footer">
         <span>MANUAL DEL CONSTRUCTOR POPULAR COLOMBIANO</span>
-        <span>MÓDULO 3 — PÁGINA 1 DE 2</span>
+        <span>MÓDULO 3 — PÁGINA 1 DE 6</span>
       </div>
     </article>
 
 
-    <!-- PÁGINA 2: ENSAMBLE DE GUADUA INYECTADA Y AISLAMIENTO DE HUMEDAD -->
+    <!-- =========================================================
+         PÁGINA 2: MADERAS NATIVAS DEL PACÍFICO Y DIMENSIONAMIENTO
+         ========================================================= -->
     <article class="manual-page" id="pagina2">
       <div class="page-header">
         <div>
           <div class="series-label">MÓDULO 3: ESTRUCTURAS EN MADERA Y PALAFITOS</div>
-          <h2 class="chapter-main-title" style="font-size: 1.75rem;">Ensambles de Bambú-Guadua (NSR-10 G.12) y Protección Palafítica</h2>
+          <h2 class="chapter-main-title">Reconocimiento Sensorial de Maderas del Pacífico y Escuadrías</h2>
+        </div>
+        <div class="normative-pill">
+          <strong>NSR-10:</strong> Grupos ES1, ES2, ES3
+        </div>
+      </div>
+
+      <h2 class="section-title"><span>2.</span> Nombres Locales, Identificación Táctil y Clasificación NSR-10</h2>
+      <p>
+        En el bosque pluvial del Pacífico conviven especies extraordinarias. Para la selección en obra y en aserrío, reconózcalas por sus características sensoriales, peso relativo y resistencia mecánica:
+      </p>
+
+      <div class="table-container">
+        <table class="tech-table">
+          <thead>
+            <tr>
+              <th style="width: 15%;">Grupo NSR-10</th>
+              <th style="width: 22%;">Especie Local</th>
+              <th style="width: 33%;">Identificación Táctil, Visual y Olfativa</th>
+              <th style="width: 30%;">Uso Estructural Recomendado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ES1 (Muy Pesadas)</strong></td>
+              <td><strong>Nato</strong><br><em>(Mora megistosperma)</em></td>
+              <td>Color rojizo a café chocolate oscuro; pesadísimo (se hunde en el agua); grano entrelazado; olor astringente a tanino. La navaja casi no penetra.</td>
+              <td><strong>El rey de los pilotes:</strong> Inmune a la pudrición bajo fango saturado y agua salobre. Resiste la broma marina (<em>Teredo navalis</em>). Pilotes y vigas cargueras.</td>
+            </tr>
+            <tr>
+              <td><strong>ES1 (Muy Pesadas)</strong></td>
+              <td><strong>Mangle</strong><br><em>(Rhizophora mangle)</em></td>
+              <td>Madera extremadamente dura, fibra muy densa, color pardo rojizo. Difícil de clavar sin perforación guía previa con broca.</td>
+              <td>Postes palafíticos, puntales de arriostramiento y soleras de piso expuestas a humedad salina continua en esteros.</td>
+            </tr>
+            <tr>
+              <td><strong>ES2 (Pesadas)</strong></td>
+              <td><strong>Chanul</strong><br><em>(Humiriastrum procerum)</em></td>
+              <td>Color marrón amarillento a castaño; veteado fino; astillamiento elástico; peso alto pero fácil de trabajar con serrucho y cepillo.</td>
+              <td><strong>Columnas y diagonales:</strong> Gran rigidez a flexión y compresión paralela. No se pandea con facilidad ante el empuje sísmico.</td>
+            </tr>
+            <tr>
+              <td><strong>ES3 (Medias)</strong></td>
+              <td><strong>Cuángare</strong><br><em>(Otoba gracilipes)</em></td>
+              <td>Color rosado claro a canela; madera liviana a media; textura suave al tacto; clava con gran facilidad sin rajarse.</td>
+              <td>Tabiquería divisoria, forro de paredes, cielo raso y entablado de piso interior (siempre protegido de la lluvia directa).</td>
+            </tr>
+            <tr>
+              <td><strong>ES3 (Medias)</strong></td>
+              <td><strong>Sajo / Otoba / Machare</strong></td>
+              <td>Tonos claros, poro abierto, secado relativamente rápido para el clima de costa húmeda.</td>
+              <td>Correas de techo, divisiones ligeras no portantes y marcos de puertas y ventanas.</td>
+            </tr>
+            <tr>
+              <td><strong>Capítulo G.12</strong></td>
+              <td><strong>Guadua</strong><br><em>(Guadua angustifolia)</em></td>
+              <td>Tubo hueco con nudos cada 20–35 cm. Corteza verde brillante al cosechar y pajiza al secar. Fibras exteriores ultrarresistentes a tracción.</td>
+              <td>Columnas compuestas, soleras y diagonales (siempre con canuto inyectado con mortero en uniones empernadas).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-header">
+          <span>🔍</span> Pruebas de Campo del Madero Sano (Sin instrumentos de laboratorio)
+        </div>
+        <p><strong>1. Prueba de la uña / navaja:</strong> Si la uña marca con facilidad una hendidura profunda en el pilote, se trata de albura o madera blanda no apta para soporte estructural. El duramen de Nato o Chanul rechaza firmemente la hoja de corte.</p>
+        <p style="margin-bottom: 0;"><strong>2. Prueba del sonido al golpe:</strong> Golpee el madero en seco con el mango del martillo; el Nato y el Chanul sanos emiten un sonido seco y campante ("ting"), mientras que la madera picada o con pudrición interna suena opaca y hueca ("poc-poc").</p>
+      </div>
+
+      <h3 class="sub-title">2.2. Dimensiones Mínimas de Escuadría para Pies Derechos (Columnas)</h3>
+      <ul>
+        <li><strong>Vivienda de 1 piso:</strong> Columnas de mínimo <strong>$3" \times 4"$ ($7.5 \times 10\text{ cm}$)</strong> o rollizos de diámetro no menor a 10 cm.</li>
+        <li><strong>Vivienda de 2 pisos (primer nivel):</strong> Columnas de mínimo <strong>$4" \times 4"$ ($10 \times 10\text{ cm}$)</strong> o <strong>$4" \times 6"$ ($10 \times 15\text{ cm}$)</strong>.</li>
+        <li><strong>Separación entre columnas (intercolumnio):</strong> Máximo cada <strong>2.50 a 3.00 metros</strong>. Entre columna y columna se colocan pies derechos secundarios de $2" \times 4"$ cada 50 o 60 cm para recibir el forro.</li>
+      </ul>
+
+      <div class="page-footer">
+        <span>MANUAL DEL CONSTRUCTOR POPULAR COLOMBIANO</span>
+        <span>MÓDULO 3 — PÁGINA 2 DE 6</span>
+      </div>
+    </article>
+
+
+    <!-- =========================================================
+         PÁGINA 3: UNIONES ESTRUCTURALES Y EL ENSAMBLE EN HOMBRO
+         ========================================================= -->
+    <article class="manual-page" id="pagina3">
+      <div class="page-header">
+        <div>
+          <div class="series-label">MÓDULO 3: ESTRUCTURAS EN MADERA Y PALAFITOS</div>
+          <h2 class="chapter-main-title">Uniones Seguras: Clavo Liso vs. Perno Pasante con Arandela Grower</h2>
+        </div>
+        <div class="normative-pill">
+          <strong>NSR-10:</strong> Título G (Cap. G.6)
+        </div>
+      </div>
+
+      <h2 class="section-title"><span>3.</span> Ensambles de Madera: Por qué NO Clavar "a Tope" Directo</h2>
+      <p>
+        Uno de los errores más peligrosos en la carpintería artesanal es unir dos maderos gruesos clavando un par de puntillas directas por fuera. Con el tiempo, la humedad ablanda la fibra, el sismo sacude la estructura y los clavos se salen como dientes flojos.
+      </p>
+
+      <div class="ascii-diagram">
+       ERROR PELIGROSO:                          CONEXIÓN CORRECTA NSR-10:
+    Clavado a tope directo                  Perno pasante con pletina y arandela
+
+       [Carrera]                                   [Carrera]
+       ====================                        ====================
+          |      ^                                    |  [Pletina en T] |
+          |      | Clavo trabajando                   |    o  o  o      |  Pernos pasantes
+          |      | a extracción pura                  |  ---O----       |  con arandelas anchas
+       +--+--+ (¡Se desclava solo!)                +--+--+   |          |
+       |     |                                     |     |   O Perno    |
+       | Pie |                                     | Pie |   | pasante  |
+       | der |                                     | der |   o          |
+       +-----+                                     +-----+              |
+      </div>
+
+      <h3 class="sub-title">3.1. La Batalla Técnica: Clavo Liso vs. Perno con Arandela de Presión (Grower)</h3>
+      <div class="table-container">
+        <table class="tech-table">
+          <thead>
+            <tr>
+              <th>Criterio Técnico</th>
+              <th>Puntilla Lisa Tradicional</th>
+              <th>Perno Pasante de 1/2" + Arandela Grower</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mecanismo de Agarre</strong></td>
+              <td>Fricción superficial microscópica entre el vástago liso y la fibra.</td>
+              <td>Confinamiento mecánico pasante: aprisiona todo el espesor de la madera.</td>
+            </tr>
+            <tr>
+              <td><strong>Comportamiento en Sismo</strong></td>
+              <td>El vaivén ensancha el orificio; en pocas sacudidas <strong>la fricción cae a cero y el clavo se sale solo</strong>.</td>
+              <td>Indestructible al deslizamiento: el perno trabaja a <strong>corte puro (cizalladura)</strong> y las arandelas impiden la separación.</td>
+            </tr>
+            <tr>
+              <td><strong>Efecto Humedad del Pacífico</strong></td>
+              <td>La madera saturada afloja la fibra; el clavo negro se oxida en 1 año perdiendo el 50% de su sección.</td>
+              <td>Pernos galvanizados de 1/2": corrosión mínima; la madera se hincha y contrae sin soltarse.</td>
+            </tr>
+            <tr>
+              <td><strong>Función de la Arandela Grower</strong></td>
+              <td>Inexistente.</td>
+              <td><strong>Absorbe la contracción por secado de la madera</strong>, manteniendo la tensión para que la tuerca jamás se desenrosque con el sismo.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title"><span>3.2.</span> El Ensamble Maestro: El Rebaje o Hombro de Apoyo en Pilote</h2>
+      <p>
+        El colapso más catastrófico en palafitos ocurre cuando la viga carguera está clavada simplemente al costado del pilote sin ningún apoyo debajo:
+      </p>
+
+      <div class="ascii-diagram">
+      ERROR FATAL: CORTE PURO                   CONEXIÓN CORRECTA: ENSAMBLE EN HOMBRO
+    (Falla instantánea en sismo)                 (La madera carga sobre la madera)
+
+          [Viga Carguera]                                   [Viga Carguera]
+          +-----------+                                     +-----------+
+          |           |                                     |           |
+          |     o     | <-- Clavos o pernos                 |     O     | <-- Perno pasante 1/2"
+          |     o     |     aguantan TODO el                |           |     con arandela Grower
+    +-----+-----------+                               +-----+-----------+
+    |     |                                           |     |///////////| <-- HOMBRO / REBAJE
+    |     |                                           |     +===========+     (La viga descansa
+    |     |                                           |     |                 sobre 2" a 3" de
+    |     |                                           |     |                 madera viva del pilote)
+    |  P  |                                           |  P  |
+    |  I  |                                           |  I  |
+    |  L  |                                           |  L  |
+    |  O  |                                           |  O  |
+    |  T  |                                           |  T  |
+    |  E  |                                           |  E  |
+    +-----+                                           +-----+
+  ¡EL CLAVO SE PARTE O CORTA LA FIBRA!              ¡LA MADERA TRABAJA A COMPRESIÓN DIRECTA!
+  (La casa se cae al fango)                         (El perno solo mantiene la viga en su sitio)
+      </div>
+
+      <p>
+        <strong>La regla de oro del hombro:</strong> La cabeza del pilote debe rebajarse entre <strong>5 y 7.5 cm (2" a 3") de profundidad</strong> para crear una repisa horizontal perfecta. Así, el peso de la vivienda se transmite por <strong>compresión directa sobre la fibra</strong>, donde la madera es 10 veces más resistente.
+      </p>
+
+      <div class="page-footer">
+        <span>MANUAL DEL CONSTRUCTOR POPULAR COLOMBIANO</span>
+        <span>MÓDULO 3 — PÁGINA 3 DE 6</span>
+      </div>
+    </article>
+
+
+    <!-- =========================================================
+         PÁGINA 4: ENTRAMADO DE PISO, CRUCES EN PILOTES Y MAREAS
+         ========================================================= -->
+    <article class="manual-page" id="pagina4">
+      <div class="page-header">
+        <div>
+          <div class="series-label">MÓDULO 3: ESTRUCTURAS EN MADERA Y PALAFITOS</div>
+          <h2 class="chapter-main-title">Entramado de Piso, Cruces en Pilotes y Cota de Marea</h2>
+        </div>
+        <div class="normative-pill">
+          <strong>DIMAR CP1-05</strong> & NSR-10 G.11
+        </div>
+      </div>
+
+      <h2 class="section-title"><span>4.</span> El Entramado de Piso: Creando un Diafragma Rígido Horizontal</h2>
+      <p>
+        El piso del palafito amarra las cabezas de los pilotes para que se muevan juntos en el temblor. Si el piso es flexible, los pilotes vibran desfasados y parten la vivienda.
+      </p>
+
+      <div class="ascii-diagram">
+                  DISTRIBUCIÓN DEL ENTRAMADO DE PISO PALAFÍTICO
+
+             +---------------------------------------------+  [Pilote de esquina]
+             | [Viga Maestra Carguera: 4"x6" o 3"x6"]      |
+             +=======+==============+==============+=======+
+             |       |              |              |       |
+             |       | Viguetas     | Viguetas     |       |
+             |       | secundarias  | secundarias  |       |
+             |       | (2"x4" o     | (Separadas   |       |
+             |       |  2"x5")      |  40 a 50 cm) |       |
+             |       |              |              |       |
+             +=======+==============+==============+=======+
+             | [Viga Maestra Carguera: 4"x6" o 3"x6"]      |
+             +---------------------------------------------+
+               ▲                                           ▲
+               |======== Entablado clavado a 90° =========|
+               (Tablas de 1" fijadas con 2 clavos por vigueta para armar diafragma)
+      </div>
+
+      <ul>
+        <li><strong>Vigas Maestras:</strong> Escuadría mínima de <strong>$3" \times 6"$ o $4" \times 6"$</strong> (Nato o Chanul), apoyadas sobre los hombros de los pilotes.</li>
+        <li><strong>Viguetas Secundarias:</strong> Listones de <strong>$2" \times 4"$ o $2" \times 5"$</strong> cada <strong>40 a 50 cm</strong> de centro a centro para evitar el pandeo o rebote al caminar.</li>
+        <li><strong>Entablado Estructural:</strong> Tablas fijadas con al menos <strong>dos clavos de $2\frac{1}{2}"$ en cada cruce con una vigueta</strong>, armando un plano indeformable.</li>
+      </ul>
+
+      <h2 class="section-title"><span>4.1.</span> Cruces de San Andrés ($X$) en la Zona de Pilotes: El Freno Sísmico</h2>
+      <p>
+        Los pilotes elevados (1.5 a 2.8 m sobre el fango) actúan como patas largas flexibles. Sin diagonales, el sismo los parte por flexión en la interfase suelo-aire:
+      </p>
+
+      <div class="ascii-diagram">
+             ARRIOSTRAMIENTO EN "X" ENTRE PILOTES (ZONA PALAFÍTICA)
+
+               [Viga Maestra del Piso]           [Viga Maestra del Piso]
+               +-------------------------------------------------------+
+               |                       ^                               |
+               |                       | Perno pasante 1/2" con arandela
+               | \                   / |                               |
+               |   \               /   |                               |
+               |     \           /     |                               |
+               |       \       /       |                               |
+       Pilote  |         \   /         | Perno central en cruce de "X" Pilote
+       de Nato |           X           |                               de Nato
+       (ES1)   |         /   \         |                               (ES1)
+               |       /       \       |                               |
+               |     /           \     |                               |
+               |   /               \   |                               |
+               | /                   \ |                               |
+               +-----------------------+-------------------------------+
+               |                       |                               |
+        ~~~~~~~~~~~~~~~~ Nivel de Marea Máxima (HAT +5.31 m) ~~~~~~~~~~~~~~~~
+        ================ Nivel del Fango / Suelo Aluvial ====================
+      </div>
+
+      <p>
+        <strong>Detalles constructivos de la Cruz en pilotes:</strong> Diagonales de <strong>$2" \times 4"$ o $1.5" \times 5"$</strong> a un ángulo entre $35^\circ$ y $55^\circ$. Pernos de 1/2" en extremos y <strong>perno central en el cruce de la "X"</strong> para evitar el pandeo por compresión. Mínimo <strong>dos crujías en X por cada fachada</strong>.
+      </p>
+
+      <h2 class="section-title"><span>4.2.</span> Cota de Piso con Datos de Marea (Estación CP1-05 DIMAR)</h2>
+      <div class="tip-card">
+        <div class="tip-header">
+          <span>🌊</span> Cálculo Hidrológico de Seguridad para Limoncito y Guadualito
+        </div>
+        <p>
+          Integrando los datos mareográficos oficiales de la DIMAR (Vértice CP1-05 TCBUEN / Bahía de Buenaventura):
+        </p>
+        <ul>
+          <li><strong>Pleamar de Sicigia (Puja media - MHWS):</strong> $+4.81\text{ m}$ sobre el datum LAT.</li>
+          <li><strong>Marea Astronómica Máxima Extrema (HAT):</strong> $+5.31\text{ m}$ sobre el datum LAT.</li>
+          <li><strong>Sobreelevación fluvial Río Dagua + Borde Libre:</strong> $0.50\text{ m}$ a $0.80\text{ m}$.</li>
+          <li><strong>Cota mínima de piso terminado ($NPT_{min}$):</strong> La plataforma debe ubicarse entre <strong>2.20 m y 2.80 m</strong> por encima del lecho de fango.</li>
+        </ul>
+      </div>
+
+      <div class="page-footer">
+        <span>MANUAL DEL CONSTRUCTOR POPULAR COLOMBIANO</span>
+        <span>MÓDULO 3 — PÁGINA 4 DE 6</span>
+      </div>
+    </article>
+
+
+    <!-- =========================================================
+         PÁGINA 5: TÉCNICA DE LA GUADUA (CANUTO INYECTADO Y CORTES)
+         ========================================================= -->
+    <article class="manual-page" id="pagina5">
+      <div class="page-header">
+        <div>
+          <div class="series-label">MÓDULO 3: ESTRUCTURAS EN MADERA Y PALAFITOS</div>
+          <h2 class="chapter-main-title">Ensambles de Bambú-Guadua: La Regla del Canuto Inyectado</h2>
         </div>
         <div class="normative-pill">
           <strong>NSR-10:</strong> Título G (Cap. G.12)
         </div>
       </div>
 
-      <h2 class="section-title"><span>2.</span> La Regla de Oro: El Canuto con Mortero Inyectado</h2>
+      <h2 class="section-title"><span>5.</span> La Regla de Oro: El Canuto con Mortero Inyectado (NSR-10 G.12)</h2>
       <p>
         La guadua (<em>Guadua angustifolia Kunth</em>) es hueca y tiene fibras longitudinales paralelas. Si usted pasa un perno de acero a través de un canuto vacío, el perno actúa como una cuña y raja el culmo en dos mitades con el primer temblor.
       </p>
       <p>
-        <strong>El gran invento colombiano de la norma NSR-10 (Capítulo G.12):</strong> Inyectar una mezcla fluida de cemento y arena (1:2) dentro del canuto donde pasa el perno. Al fraguar, el mortero se vuelve una piedra maciza que abraza el perno y hace imposible que la guadua se raje.
+        <strong>El invento sismorresistente colombiano:</strong> Inyectar una mezcla fluida de cemento y arena (1:2) dentro del canuto donde pasa el perno. Al fraguar, el mortero forma un tapón macizo indestructible que transfiere el esfuerzo al nudo.
       </p>
 
       <!-- Lámina Detalle 3.2: Guadua Inyectada en Español -->
       <figure class="tech-figure">
         <img src="images/detalle_guadua_inyectada.jpg" alt="Detalle de unión de bambú-guadua con perno pasante y mortero inyectado" id="imgGuadua" />
         <figcaption class="fig-caption">
-          <strong>Lámina 3.2:</strong> Corte en sección transversal del ensamble sismorresistente. Se aprecia el canuto relleno de mortero fluido 1:2 formando un núcleo macizo indestructible alrededor del perno pasante con arandelas anchas, siempre ubicado junto a un <strong>nudo natural</strong>.
+          <strong>Lámina 3.2:</strong> Corte en sección transversal del ensamble sismorresistente. Se aprecia el canuto relleno de mortero fluido 1:2 formando un núcleo macizo alrededor del perno pasante con arandelas anchas, siempre ubicado junto a un <strong>nudo natural</strong>.
         </figcaption>
       </figure>
+
+      <div class="ascii-diagram">
+                       PASO A PASO: LA UNIÓN INYECTADA NSR-10
+                       
+   Paso 1: Perforación             Paso 2: Ventanilla             Paso 3: Vaciado y Fraguado
+   
+         NUDO                            NUDO                            NUDO
+      |========|                      |========|                      |========|
+      |        |                      |  [==]  | <-- Ventanilla       | #######| <-- CANUTO
+      |        |                      |        |     de inyección     | #######|     RELLENO CON
+      |   (O)  | <-- Agujero de       |---(O)--| <-- Perno pasante    |---(O)--|     MORTERO 1:2
+      |        |     perno 1/2"       |        |     de acero         | #######|     (Forma un tapón
+      |        |                      |        |                      | #######|     sólido macizo)
+      |========|                      |========|                      |========|
+         NUDO                            NUDO                            NUDO
+      </div>
+
+      <h3 class="sub-title">5.1. Cortes Tradicionales de Acople en Guadua</h3>
+      <div class="ascii-diagram">
+            CORTE "BOCA DE PESCADO"                       CORTE "PICO DE FLAUTA"
+            (Unión perpendicular a 90°)                  (Unión en diagonal a 45°)
+            
+                   /========\                                   /========\
+                  /          \                                 /        /
+                 |    NUDO    |                               |  NUDO  /
+                 \            /                                \      /
+                  \          /                                  \    /
+                 (            ) <-- Curva cóncava                \  /
+                  \          /      que abraza el culmo           \/ <-- Bisel plano a 45°
+                   \========/       de la columna                        para diagonales
+      </div>
 
       <!-- CALCULADORA DE DISTANCIAS DE TALADRADO NSR-10 -->
       <div class="calc-box no-print">
         <div class="calc-title">
-          <span>📏</span> Calculadora Rápida del Maestro: Distancias Seguras de Taladrado
+          <span>📏</span> Calculadora Rápida del Maestro: Distancias Seguras de Taladrado (NSR-10)
         </div>
         <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
-          Seleccione el diámetro del perno pasante para calcular las distancias mínimas para no rajar la madera ni la guadua:
+          Seleccione el diámetro del perno pasante para verificar las distancias mínimas para no rajar la madera ni la guadua:
         </p>
         <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
           <label style="font-weight: 600; font-size: 0.85rem;">Diámetro del Perno:</label>
@@ -837,92 +1233,135 @@
         </div>
       </div>
 
-      <h2 class="section-title"><span>3.</span> Maderas Nativas del Pacífico (Limoncito y Guadualito)</h2>
-      <div class="table-container">
-        <table class="tech-table">
-          <thead>
-            <tr>
-              <th>Grupo NSR-10</th>
-              <th>Especies Tradicionales</th>
-              <th>Propiedades Clave</th>
-              <th>Uso en Vivienda Palafítica</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>ES1 (Muy Pesadas)</strong></td>
-              <td><strong>Nato, Guayacán, Choibá</strong></td>
-              <td>Inmune al agua dulce y salada, resiste comején y hongos</td>
-              <td>Pilotes enterrados, vigas maestras y dados de cimentación</td>
-            </tr>
-            <tr>
-              <td><strong>ES2 (Pesadas)</strong></td>
-              <td><strong>Chanul, Roble, Abarco</strong></td>
-              <td>Alta resistencia a flexión, grano fino y recto</td>
-              <td>Pies derechos (columnas), carreras y viguetas de entrepiso</td>
-            </tr>
-            <tr>
-              <td><strong>ES3 (Medias)</strong></td>
-              <td><strong>Cuángare, Sajo, Otoba, Machare</strong></td>
-              <td>Liviana, fácil clavado y secado rápido</td>
-              <td>Tabiques divisorios, entablado de piso y correas de techo</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="page-footer">
+        <span>MANUAL DEL CONSTRUCTOR POPULAR COLOMBIANO</span>
+        <span>MÓDULO 3 — PÁGINA 5 DE 6</span>
+      </div>
+    </article>
+
+
+    <!-- =========================================================
+         PÁGINA 6: TECHOS TROPICALES, LISTA DE CHEQUEO Y TALLER
+         ========================================================= -->
+    <article class="manual-page" id="pagina6">
+      <div class="page-header">
+        <div>
+          <div class="series-label">MÓDULO 3: ESTRUCTURAS EN MADERA Y PALAFITOS</div>
+          <h2 class="chapter-main-title">Techos Tropicales, Verificación de Obra y Diálogo de Saberes</h2>
+        </div>
+        <div class="normative-pill">
+          <strong>NSR-10 G.7</strong> & Diálogo de Saberes
+        </div>
       </div>
 
-      <!-- LISTA DE CHEQUEO DEL MAESTRO DE OBRA -->
+      <h2 class="section-title"><span>6.</span> Techos Tropicales y Resistencia a Vientos Fuertes (NSR-10 G.7)</h2>
+      <p>
+        En el Pacífico la lluvia es continua (>6.000 mm/año) y batiente por vendavales costeros. Un techo con aleros cortos pudre las paredes en dos años o sale volando con el viento:
+      </p>
+
+      <div class="ascii-diagram">
+                    EL TECHO TROPICAL CON PROTECCIÓN POR DISEÑO
+
+                      Láminas de zinc con clavo paraguas
+                      y golilla de caucho EN LA CRESTA
+                                 ▲
+                     /============\============\
+                    /              \            \
+                   /   [Cercha en   \            \
+                  /     Pendolón]    \            \
+                 /                    \            \
+                /                      \            \
+          +----+------------------------+----+       \
+          |    |  [Solera Superior]     |    |        \
+          |                                            \ <--- ALERO DE SEGURIDAD
+          |    |                        |    |                (Mínimo 80 a 120 cm)
+          |    |                        |    |                ¡Protege la pared de madera
+          |    |  Pared protegida       |    |                 de la lluvia batiente!
+          |    |  del sol y lluvia      |    |
+      </div>
+
+      <ul>
+        <li><strong>Aleros Amplios ($\ge 1.0\text{ m}$):</strong> Vuelo perimetral indispensable para impedir que el agua moje constantemente los pies derechos y cerramientos.</li>
+        <li><strong>Flejes Anti-Huracán:</strong> Pletinas de lámina galvanizada perforada de $1\frac{1}{2}"$ que amarran la cercha a la solera superior.</li>
+        <li><strong>Clavado en la Cresta de la Onda:</strong> El clavo paraguas con golilla de neopreno va <strong>SIEMPRE en la cresta alta</strong>, jamás en el valle donde baja el agua.</li>
+      </ul>
+
+      <!-- LISTA DE CHEQUEO DEL MAESTRO DE OBRA (9 PUNTOS) -->
       <div class="checklist-container">
         <h3 class="sub-title" style="margin-top: 0; display: flex; align-items: center; justify-content: space-between;">
-          <span>✅ Lista de Chequeo del Maestro (Antes de Montar el Techo)</span>
-          <span id="checkCounter" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--text-muted);">0 / 6 listos</span>
+          <span>✅ Lista de Chequeo del Maestro (Antes de Entregar la Estructura)</span>
+          <span id="checkCounter" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--text-muted);">0 / 9 listos</span>
         </h3>
         
         <label class="check-item">
           <input type="checkbox" class="chk-item">
           <div class="check-text">
             <strong>1. ¿Están todos los pies derechos a plomo exacto?</strong>
-            <span>Verificar con plomada en las dos caras de cada columna antes de apretar pernos.</span>
+            <span>Verificar con plomada en las dos caras de cada columna antes de apretar pernos pasantes.</span>
           </div>
         </label>
 
         <label class="check-item">
           <input type="checkbox" class="chk-item">
           <div class="check-text">
-            <strong>2. ¿Colocó las Cruces de San Andrés en esquinas?</strong>
-            <span>Al menos 2 módulos en X por cada fachada para bloquear el empuje del viento y sismo.</span>
+            <strong>2. ¿Las vigas maestras descansan sobre un hombro tallado en el pilote?</strong>
+            <span>Ninguna viga carguera debe depender únicamente de pernos o clavos trabajando a corte en el aire.</span>
           </div>
         </label>
 
         <label class="check-item">
           <input type="checkbox" class="chk-item">
           <div class="check-text">
-            <strong>3. ¿Todos los pernos tienen arandela ancha en ambos lados?</strong>
-            <span>Sin arandela, la tuerca se hunde en la madera y aplasta las fibras perdiendo el apriete.</span>
+            <strong>3. ¿Hay Cruces de San Andrés en la zona de pilotes y esquinas?</strong>
+            <span>Comprobar al menos dos módulos triangulados en X en sentido largo y dos en sentido corto.</span>
           </div>
         </label>
 
         <label class="check-item">
           <input type="checkbox" class="chk-item">
           <div class="check-text">
-            <strong>4. ¿Se inyectaron con mortero 1:2 los canutos de guadua empernados?</strong>
-            <span>Golpear con el mango del martillo: debe sonar macizo como una piedra, nunca hueco.</span>
+            <strong>4. ¿Todos los pernos tienen arandelas anchas y arandela Grower?</strong>
+            <span>La arandela Grower absorbe la contracción por secado impidiendo que la tuerca se desenrosque con el sismo.</span>
           </div>
         </label>
 
         <label class="check-item">
           <input type="checkbox" class="chk-item">
           <div class="check-text">
-            <strong>5. ¿La madera está despegada al menos 5 cm del concreto?</strong>
-            <span>Verificar que la pletina en U mantenga la luz libre para que el agua escurra libremente.</span>
+            <strong>5. ¿Se inyectaron con mortero 1:2 los canutos de guadua empernados?</strong>
+            <span>Golpear suavemente con el mango del martillo: debe sonar macizo como una roca, nunca hueco.</span>
           </div>
         </label>
 
         <label class="check-item">
           <input type="checkbox" class="chk-item">
           <div class="check-text">
-            <strong>6. ¿Se inmunizó la madera contra el comején?</strong>
-            <span>Aplicar sales de boro o preservante en todas las caras y cortes antes del montaje.</span>
+            <strong>6. ¿La plataforma de piso está mínimo a 2.20 m sobre el fango?</strong>
+            <span>Garantiza superar la marea viva extrema (HAT +5.31 m) y las borrascas del río Dagua.</span>
+          </div>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="chk-item">
+          <div class="check-text">
+            <strong>7. ¿La madera de columnas está despegada al menos 5 cm del concreto?</strong>
+            <span>La pletina en U mantiene la luz libre para que el agua escurra y el aire ventile la base.</span>
+          </div>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="chk-item">
+          <div class="check-text">
+            <strong>8. ¿Los aleros de techo vuelan al menos 1.0 metro de la pared?</strong>
+            <span>Protección pasiva indispensable contra la lluvia batiente de más de 6.000 mm anuales.</span>
+          </div>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="chk-item">
+          <div class="check-text">
+            <strong>9. ¿Se inmunizó la madera contra el comején y hongos?</strong>
+            <span>Aplicar sales de boro o preservante penetrante en todas las caras y cortes antes del montaje.</span>
           </div>
         </label>
 
@@ -931,9 +1370,44 @@
         </div>
       </div>
 
+      <h2 class="section-title"><span>7.</span> Guía de Taller de Campo: Diálogo de Saberes con Carpinteros</h2>
+      <div class="table-container">
+        <table class="tech-table">
+          <thead>
+            <tr>
+              <th>Dinámica Práctica</th>
+              <th>Materiales de Trabajo</th>
+              <th>Objetivo Pedagógico en Comunidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Reconocimiento Sensorial</strong></td>
+              <td>Probetas de Nato, Chanul, Cuángare, Mangle y Guadua.</td>
+              <td>Diferenciar densidad, prueba de uña/navaja, sonido de golpe y duramen vs. albura.</td>
+            </tr>
+            <tr>
+              <td><strong>2. Batalla de Ensambles</strong></td>
+              <td>2 listones clavados con puntilla vs. 2 listones con perno 1/2" y arandela Grower.</td>
+              <td>Demostración física del descalce por vibración cíclica de sismo vs. la firmeza del perno bloqueado.</td>
+            </tr>
+            <tr>
+              <td><strong>3. Laboratorio del Triángulo</strong></td>
+              <td>Marco cuadrado articulado con clavos en esquinas + diagonales desmontables.</td>
+              <td>Ver cómo el paralelogramo colapsa con un dedo y cómo la "X" bloquea el movimiento en ambos sentidos.</td>
+            </tr>
+            <tr>
+              <td><strong>4. Mesa de Vocabulario Local</strong></td>
+              <td>Cuaderno de campo y pizarra comunitaria.</td>
+              <td>Registrar los términos vernáculos ribereños del río Dagua para retroalimentar el manual.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="page-footer">
         <span>MANUAL DEL CONSTRUCTOR POPULAR COLOMBIANO</span>
-        <span>MÓDULO 3 — PÁGINA 2 DE 2</span>
+        <span>MÓDULO 3 — PÁGINA 6 DE 6</span>
       </div>
     </article>
 
@@ -982,8 +1456,8 @@
       const hasBracing = braceToggle.checked;
       const baseLeftX = 90;
       const baseRightX = 270;
-      const baseY = 190;
-      const topY = 50;
+      const baseY = 170;
+      const topY = 40;
 
       // Si tiene diagonales, la rigidez reduce la deformación en un 90%
       const stiffness = hasBracing ? 0.08 : 0.75;
@@ -1002,66 +1476,56 @@
       beamTop.setAttribute('x2', newTopRightX + 20);
 
       // Actualizar Techo
-      const peakX = (newTopLeftX + newTopRightX) / 2;
-      roofShape.setAttribute('points', `${newTopLeftX - 30},50 ${peakX},10 ${newTopRightX + 30},50`);
+      const roofPeakX = 180 + deltaX;
+      roofShape.setAttribute('points', `${newTopLeftX - 30},40 ${roofPeakX},10 ${newTopRightX + 30},40`);
 
       // Actualizar Diagonales
       if (hasBracing) {
-        diag1.setAttribute('x1', baseLeftX);
-        diag1.setAttribute('y1', baseY);
         diag1.setAttribute('x2', newTopRightX);
-        diag1.setAttribute('y2', topY);
-
-        diag2.setAttribute('x1', baseRightX);
-        diag2.setAttribute('y1', baseY);
         diag2.setAttribute('x2', newTopLeftX);
-        diag2.setAttribute('y2', topY);
       }
 
-      // Alertas y colores
-      if (!hasBracing && intensity > 40) {
+      // Alerta de Colapso
+      if (!hasBracing && intensity > 50) {
         collapseWarning.style.display = 'block';
+        collapseWarning.setAttribute('x', 180 + deltaX);
         colLeft.setAttribute('stroke', '#dc2626');
         colRight.setAttribute('stroke', '#dc2626');
-        simStatusBadge.textContent = '¡COLAPSO INMINENTE!';
-        simStatusBadge.style.background = '#dc2626';
-      } else if (hasBracing) {
-        collapseWarning.style.display = 'none';
-        colLeft.setAttribute('stroke', '#16a34a');
-        colRight.setAttribute('stroke', '#16a34a');
-        simStatusBadge.textContent = 'ESTRUCTURA RÍGIDA Y SEGURA (NSR-10)';
-        simStatusBadge.style.background = '#16a34a';
       } else {
         collapseWarning.style.display = 'none';
         colLeft.setAttribute('stroke', '#b45309');
         colRight.setAttribute('stroke', '#b45309');
-        simStatusBadge.textContent = 'SIN DIAGONALES (INESTABLE)';
-        simStatusBadge.style.background = '#d97706';
       }
     }
-
-    braceToggle.addEventListener('change', () => {
-      if (braceToggle.checked) {
-        bracingGroup.style.opacity = '1';
-        braceLabel.textContent = 'Activas (Cruz de San Andrés)';
-        braceLabel.style.color = '#16a34a';
-      } else {
-        bracingGroup.style.opacity = '0';
-        braceLabel.textContent = 'Desactivadas';
-        braceLabel.style.color = 'inherit';
-      }
-      updatePhysics(parseFloat(shakeRange.value));
-    });
 
     shakeRange.addEventListener('input', (e) => {
       updatePhysics(parseFloat(e.target.value));
     });
 
-    // Animación de pulso sísmico
+    braceToggle.addEventListener('change', (e) => {
+      const active = e.target.checked;
+      if (active) {
+        bracingGroup.style.opacity = '1';
+        braceLabel.textContent = 'Cruz de San Andrés ACTIVA';
+        braceLabel.style.color = 'var(--accent-success)';
+        simStatusBadge.textContent = 'TRIÁNGULOS ACTIVOS (ESTABLE)';
+        simStatusBadge.style.background = 'var(--accent-success)';
+      } else {
+        bracingGroup.style.opacity = '0';
+        braceLabel.textContent = 'Desactivadas';
+        braceLabel.style.color = 'var(--text-muted)';
+        simStatusBadge.textContent = 'SIN DIAGONALES (INESTABLE)';
+        simStatusBadge.style.background = 'var(--accent-danger)';
+      }
+      updatePhysics(parseFloat(shakeRange.value));
+    });
+
+    // Botón de Sacudida Automática Dinámica
     let animId = null;
     shakePulseBtn.addEventListener('click', () => {
-      let t = 0;
       if (animId) cancelAnimationFrame(animId);
+      let t = 0;
+      shakePulseBtn.disabled = true;
 
       function oscillate() {
         t += 0.15;
@@ -1072,17 +1536,13 @@
         } else {
           updatePhysics(0);
           shakeRange.value = 0;
+          shakePulseBtn.disabled = false;
         }
       }
       oscillate();
     });
 
-    document.getElementById('simSismoBtn').addEventListener('click', () => {
-      document.getElementById('simSismoBtn').scrollIntoView({ behavior: 'smooth' });
-      shakePulseBtn.click();
-    });
-
-    // 3. CALCULADORA DE DISTANCIAS DE PERNOS
+    // 3. CALCULADORA RÁPIDA DE TALADRADO NSR-10
     const boltSelect = document.getElementById('boltSelect');
     const distExtrem = document.getElementById('distExtrem');
     const distEntrePernos = document.getElementById('distEntrePernos');
@@ -1090,13 +1550,15 @@
 
     function updateBoltCalc() {
       const d = parseFloat(boltSelect.value); // en mm
-      const extremoCm = ((7 * d) / 10).toFixed(1);
-      const entreCm = ((4 * d) / 10).toFixed(1);
-      const bordeCm = ((2 * d) / 10).toFixed(1);
+      const dCm = d / 10;
+      
+      const extrem = (7 * dCm).toFixed(1);
+      const entrePernos = (4 * dCm).toFixed(1);
+      const borde = (2 * dCm).toFixed(1);
 
-      distExtrem.textContent = `${extremoCm} cm`;
-      distEntrePernos.textContent = `${entreCm} cm`;
-      distBorde.textContent = `${bordeCm} cm`;
+      distExtrem.textContent = `${extrem} cm`;
+      distEntrePernos.textContent = `${entrePernos} cm`;
+      distBorde.textContent = `${borde} cm`;
     }
 
     boltSelect.addEventListener('change', updateBoltCalc);
@@ -1109,7 +1571,7 @@
 
     function updateChecklist() {
       let checkedCount = 0;
-      checkboxes.forEach((cb, idx) => {
+      checkboxes.forEach((cb) => {
         if (cb.checked) checkedCount++;
       });
 
