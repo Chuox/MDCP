@@ -276,7 +276,7 @@
       margin-bottom: 0.4rem;
     }
 
-    /* CAJAS DE ALERTA POPULAR (¡PILAS CON ESTO!) */
+    /* CAJAS DE ALERTA POPULAR */
     .alert-card {
       border: 2px dashed var(--accent-danger);
       background: rgba(220, 38, 38, 0.04);
@@ -316,19 +316,27 @@
       margin-bottom: 0.4rem;
     }
 
-    /* DIAGRAMAS ASCII EDUCATIVOS */
-    .ascii-diagram {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      line-height: 1.35;
-      background: var(--bg);
-      border: 1px solid var(--border-accent);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      margin: 1.25rem 0;
-      overflow-x: auto;
+    /* CONTENEDOR DE GRÁFICOS SVG TÉCNICOS */
+    .svg-figure {
+      margin: 1.75rem 0;
+      text-align: center;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .fig-caption {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.65rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .fig-caption strong {
       color: var(--text);
-      white-space: pre;
     }
 
     /* SECCIÓN DE SIMULADOR INTERACTIVO */
@@ -445,40 +453,6 @@
 
     input:checked + .slider-toggle:before {
       transform: translateX(22px);
-    }
-
-    /* ESTILO DE IMÁGENES TÉCNICAS */
-    .tech-figure {
-      margin: 1.75rem 0;
-      text-align: center;
-    }
-
-    .tech-figure img {
-      width: 100%;
-      max-height: 520px;
-      object-fit: contain;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: #ffffff;
-      padding: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      cursor: zoom-in;
-      transition: transform 0.2s ease;
-    }
-
-    .tech-figure img:hover {
-      transform: scale(1.008);
-    }
-
-    .fig-caption {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-      font-style: italic;
-    }
-
-    .fig-caption strong {
-      color: var(--text);
     }
 
     /* TABLAS TÉCNICAS LIMPIAS */
@@ -622,7 +596,7 @@
       transition: width 0.3s ease;
     }
 
-    /* PIE DE PÁGINA DE EDICIÓN */
+    /* PIE DE PÁGINA */
     .page-footer {
       border-top: 1px solid var(--border);
       padding-top: 1rem;
@@ -634,9 +608,7 @@
       font-family: var(--font-mono);
     }
 
-    /* =========================================================
-       REGLAS DE IMPRESIÓN OFICIAL (TAMAÑO CARTA - PDF READY)
-       ========================================================= */
+    /* REGLAS DE IMPRESIÓN */
     @media print {
       body {
         background: #ffffff !important;
@@ -679,7 +651,6 @@
       <span class="brand-badge">NSR-10 Módulo 3</span>
     </div>
 
-    <!-- Acceso rápido a páginas -->
     <nav class="page-nav-pills no-print">
       <a href="#pagina1" title="Ir a Pág 1: Arriostramiento">Pág 1</a>
       <a href="#pagina2" title="Ir a Pág 2: Maderas">Pág 2</a>
@@ -716,18 +687,131 @@
         </div>
       </div>
 
-      <!-- Cita / Epígrafe -->
       <div class="quote-box">
         <div class="quote-text">
           "En nuestras riberas la madera es una bendición: fresca, liviana y aguantadora. Pero una casa palafítica no se cae por vieja ni porque la madera sea mala; se cae porque la armaron como una caja de fósforos floja, sin diagonales que la sostengan cuando el viento costero o el temblor la sacuden de medio lado. Hoy vamos a aprender el secreto para que su casa quede tiesa y firme para siempre."
         </div>
       </div>
 
-      <!-- Lámina Principal 3.1: Palafito en Madera (100% en Español) -->
-      <figure class="tech-figure">
-        <img src="images/palafito_madera_espanol.jpg" alt="Estructura de Soporte - Palafito de Madera con Cruces de San Andrés" id="imgPalafito" />
+      <!-- LÁMINA 3.1 EN FORMATO VECTORIAL SVG -->
+      <figure class="svg-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%" style="border-radius: 8px; font-family: 'Outfit', 'Inter', sans-serif;">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f9ff"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="mudGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="woodBeam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cielo de fondo -->
+  <rect x="0" y="0" width="800" height="520" fill="url(#skyGrad)" rx="8"/>
+
+  <!-- Fango aluvial del Río Dagua -->
+  <path d="M0 450 Q 200 445, 400 450 T 800 448 L 800 520 L 0 520 Z" fill="url(#mudGrad)"/>
+  <text x="400" y="495" fill="#fef3c7" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1">ESTRATO DE FANGO ALUVIAL SATURADO (RÍO DAGUA)</text>
+
+  <!-- Marea viva astronómica HAT -->
+  <line x1="0" y1="365" x2="800" y2="365" stroke="#0284c7" stroke-width="2" stroke-dasharray="6,4"/>
+  <rect x="25" y="350" width="260" height="24" rx="4" fill="#0284c7" opacity="0.9"/>
+  <text x="35" y="366" fill="#ffffff" font-size="11" font-weight="700">PLEAMAR MÁXIMA EXT. (HAT +5.31 m)</text>
+
+  <!-- Cota de piso terminado -->
+  <line x1="280" y1="230" x2="780" y2="230" stroke="#16a34a" stroke-width="2" stroke-dasharray="4,4"/>
+  <rect x="490" y="215" width="280" height="24" rx="4" fill="#16a34a" opacity="0.9"/>
+  <text x="500" y="231" fill="#ffffff" font-size="11" font-weight="700">COTA PISO TERMINADO (NPT ≥ 2.20 m)</text>
+
+  <!-- COTA VERTICAL LIBRE -->
+  <line x1="120" y1="230" x2="120" y2="450" stroke="#0f766e" stroke-width="2"/>
+  <polygon points="116,236 120,230 124,236" fill="#0f766e"/>
+  <polygon points="116,444 120,450 124,444" fill="#0f766e"/>
+  <rect x="75" y="325" width="90" height="22" rx="4" fill="#0f766e"/>
+  <text x="120" y="340" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">H ≥ 2.20 m</text>
+
+  <!-- PILOTES DE NATO (Hincados en fango) -->
+  <!-- Pilote Izquierdo -->
+  <rect x="200" y="225" width="30" height="255" fill="url(#woodBeam)" stroke="#78350f" stroke-width="2" rx="3"/>
+  <!-- Pilote Derecho -->
+  <rect x="570" y="225" width="30" height="255" fill="url(#woodBeam)" stroke="#78350f" stroke-width="2" rx="3"/>
+
+  <!-- CRUCES DE SAN ANDRÉS EN PILOTES (ZONA PALAFÍTICA) -->
+  <line x1="215" y1="240" x2="585" y2="420" stroke="#16a34a" stroke-width="8" stroke-linecap="round"/>
+  <line x1="585" y1="240" x2="215" y2="420" stroke="#16a34a" stroke-width="8" stroke-linecap="round"/>
+  <!-- Perno central en cruce -->
+  <circle cx="400" cy="330" r="7" fill="#1e293b" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="400" cy="330" r="3" fill="#ffffff"/>
+
+  <!-- VIGA MAESTRA CARGUERA (4"x6") -->
+  <rect x="170" y="215" width="460" height="20" fill="#78350f" stroke="#451a03" stroke-width="2" rx="2"/>
+
+  <!-- VIGUETAS DE PISO (2"x4" cada 40-50 cm) -->
+  <g fill="#d97706" stroke="#92400e" stroke-width="1.5">
+    <rect x="190" y="200" width="12" height="15" rx="1"/>
+    <rect x="250" y="200" width="12" height="15" rx="1"/>
+    <rect x="310" y="200" width="12" height="15" rx="1"/>
+    <rect x="370" y="200" width="12" height="15" rx="1"/>
+    <rect x="430" y="200" width="12" height="15" rx="1"/>
+    <rect x="490" y="200" width="12" height="15" rx="1"/>
+    <rect x="550" y="200" width="12" height="15" rx="1"/>
+    <rect x="600" y="200" width="12" height="15" rx="1"/>
+  </g>
+
+  <!-- TABLADO DE PISO (Diafragma Rígido) -->
+  <rect x="170" y="192" width="460" height="8" fill="#f59e0b" stroke="#b45309" stroke-width="1"/>
+
+  <!-- PIES DERECHOS / COLUMNAS DE CHANUL (3"x4") -->
+  <rect x="202" y="70" width="26" height="122" fill="url(#woodBeam)" stroke="#78350f" stroke-width="2"/>
+  <rect x="572" y="70" width="26" height="122" fill="url(#woodBeam)" stroke="#78350f" stroke-width="2"/>
+
+  <!-- DIAGONALES DE FACHADA (Cruces de San Andrés superiores) -->
+  <line x1="215" y1="75" x2="585" y2="190" stroke="#16a34a" stroke-width="6" stroke-linecap="round" stroke-dasharray="10,4"/>
+  <line x1="585" y1="75" x2="215" y2="190" stroke="#16a34a" stroke-width="6" stroke-linecap="round" stroke-dasharray="10,4"/>
+
+  <!-- SOLERA SUPERIOR / CARRERA -->
+  <rect x="180" y="62" width="440" height="16" fill="#78350f" stroke="#451a03" stroke-width="2" rx="2"/>
+
+  <!-- CERCHA EN MADERA TIPO PENDOLÓN -->
+  <!-- Rafters -->
+  <line x1="140" y1="62" x2="400" y2="12" stroke="#b45309" stroke-width="12" stroke-linecap="round"/>
+  <line x1="660" y1="62" x2="400" y2="12" stroke="#b45309" stroke-width="12" stroke-linecap="round"/>
+  <!-- Pendolón vertical -->
+  <line x1="400" y1="18" x2="400" y2="62" stroke="#92400e" stroke-width="8"/>
+  <!-- Tornapuntas diagonales -->
+  <line x1="400" y1="40" x2="270" y2="62" stroke="#d97706" stroke-width="6"/>
+  <line x1="400" y1="40" x2="530" y2="62" stroke="#d97706" stroke-width="6"/>
+
+  <!-- CUBIERTA CON ALERO AMPLIO (Vuelo >= 1.0 m) -->
+  <polyline points="120,68 400,10 680,68" fill="none" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- ACOTACIÓN DE ALERO -->
+  <line x1="140" y1="85" x2="202" y2="85" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="144,82 138,85 144,88" fill="#dc2626"/>
+  <polygon points="198,82 204,85 198,88" fill="#dc2626"/>
+  <rect x="125" y="95" width="95" height="18" rx="3" fill="#dc2626"/>
+  <text x="172" y="108" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">ALERO ≥ 1.0 m</text>
+
+  <!-- LLAMADAS TÉCNICAS -->
+  <!-- Etiqueta Viga Maestra en hombro -->
+  <circle cx="215" cy="225" r="5" fill="#f59e0b" stroke="#78350f" stroke-width="2"/>
+  <line x1="215" y1="225" x2="160" y2="170" stroke="#78350f" stroke-width="1.5"/>
+  <rect x="30" y="152" width="160" height="22" rx="4" fill="#78350f"/>
+  <text x="110" y="167" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">Hombro de apoyo (2" a 3")</text>
+
+  <!-- Etiqueta Perno central en X -->
+  <line x1="400" y1="330" x2="400" y2="280" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="310" y="260" width="180" height="22" rx="4" fill="#1e293b"/>
+  <text x="400" y="275" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">Perno central (anti-pandeo)</text>
+</svg>
         <figcaption class="fig-caption">
-          <strong>Lámina 3.1:</strong> Despiece técnico axonométrico de una estructura palafítica en madera. Nótese el dado de concreto ciclópeo ($40\times40\text{ cm}$) con pletina en U, las columnas principales (pies derechos), vigas maestras y la <strong>Cruz de San Andrés</strong> para disipar empujes laterales de sismo y viento.
+          <strong>Lámina 3.1:</strong> Despiece técnico axonométrico de una estructura palafítica en madera. Nótese el dado de concreto ciclópeo (40 × 40 cm) con pletina en U, las columnas principales (pies derechos), vigas maestras y la <strong>Cruz de San Andrés</strong> para disipar empujes laterales de sismo y viento.
         </figcaption>
       </figure>
 
@@ -736,24 +820,77 @@
         Si usted une cuatro maderos formando un marco cuadrado con un solo clavo en cada esquina, las cuatro esquinas actúan como bisagras sueltas. Al primer empujón lateral de un sismo o un vendaval, el cuadrado se deforma en un paralelogramo aplastado y el techo se desploma sobre la familia.
       </p>
 
-      <div class="ascii-diagram">
-    ESTRUCTURA SIN DIAGONAL                    ESTRUCTURA CON DIAGONAL
-    (Se deforma y se cae)                      (Triángulo rígido e indeformable)
+      <!-- DIBUJO VECTORIAL SVG: EL TRIÁNGULO CONTRA EL SISMO -->
+      <figure class="svg-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 290" width="100%" height="100%" style="border-radius: 8px; font-family: 'Outfit', 'Inter', sans-serif;">
+  <rect width="800" height="290" fill="#f8fafc" rx="8"/>
 
-         [Carrera de Techo]                         [Carrera de Techo]
-         +-----------------+                        +-----------------+
-         |                 |   EMPUJE DE            | \             / |   EMPUJE DE
-         |                 |   VIENTO O             |   \         /   |   VIENTO O
-         |                 |   TEMBLOR              |     \     /     |   TEMBLOR
-         |                 |   ========>            |       \ /       |   ========>
-         |                 |                        |       / \       |
-         +-----------------+                        |     /     \     |
-          [Solera de Piso]                          |   /         \   |
-                                                    | /             \ |
-       ¡SE APLASTA DE MEDIO LADO!                   +-----------------+
-    (Las esquinas no aguantan el empuje)             [Solera de Piso]
-                                                  ¡LAS CRUCES TRABAN EL MOVIMIENTO!
-      </div>
+  <!-- PANEL IZQUIERDO: SIN DIAGONALES -->
+  <g transform="translate(20, 15)">
+    <rect width="360" height="260" fill="#ffffff" stroke="#fca5a5" stroke-width="1.5" rx="8"/>
+    <text x="180" y="28" font-size="13" font-weight="800" fill="#dc2626" text-anchor="middle">SIN DIAGONAL: MECANISMO INESTABLE</text>
+    <text x="180" y="46" font-size="10" font-weight="500" fill="#71717a" text-anchor="middle">(Las esquinas actúan como bisagras flojas)</text>
+
+    <!-- Suelo -->
+    <line x1="30" y1="210" x2="330" y2="210" stroke="#71717a" stroke-width="3"/>
+    
+    <!-- Cuadrilátero Deformado -->
+    <!-- Columnas inclinadas -->
+    <line x1="90" y1="210" x2="150" y2="90" stroke="#dc2626" stroke-width="8" stroke-linecap="round"/>
+    <line x1="230" y1="210" x2="290" y2="90" stroke="#dc2626" stroke-width="8" stroke-linecap="round"/>
+    <!-- Viga superior desplazada -->
+    <line x1="130" y1="90" x2="310" y2="90" stroke="#991b1b" stroke-width="10" stroke-linecap="round"/>
+    <!-- Solera de piso -->
+    <line x1="70" y1="210" x2="250" y2="210" stroke="#78350f" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Flecha de empuje sísmico -->
+    <polygon points="50,90 20,80 20,100" fill="#dc2626"/>
+    <line x1="20" y1="90" x2="60" y2="90" stroke="#dc2626" stroke-width="5"/>
+    <text x="45" y="70" font-size="10" font-weight="800" fill="#dc2626">SISMO / VIENTO</text>
+
+    <!-- Alerta colapso -->
+    <rect x="50" y="225" width="260" height="24" rx="4" fill="#fee2e2"/>
+    <text x="180" y="241" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">⚠️ ¡COLAPSO POR PARALELOGRAMO!</text>
+  </g>
+
+  <!-- PANEL DERECHO: CON CRUZ DE SAN ANDRÉS -->
+  <g transform="translate(420, 15)">
+    <rect width="360" height="260" fill="#ffffff" stroke="#86efac" stroke-width="1.5" rx="8"/>
+    <text x="180" y="28" font-size="13" font-weight="800" fill="#16a34a" text-anchor="middle">CON CRUZ DE SAN ANDRÉS: TRIÁNGULO RÍGIDO</text>
+    <text x="180" y="46" font-size="10" font-weight="500" fill="#71717a" text-anchor="middle">(Triangulación indeformable NSR-10 Título G)</text>
+
+    <!-- Suelo -->
+    <line x1="30" y1="210" x2="330" y2="210" stroke="#71717a" stroke-width="3"/>
+
+    <!-- Diagonales en X (Cruces de San Andrés) -->
+    <line x1="90" y1="210" x2="270" y2="90" stroke="#16a34a" stroke-width="7" stroke-linecap="round"/>
+    <line x1="270" y1="210" x2="90" y2="90" stroke="#16a34a" stroke-width="7" stroke-linecap="round"/>
+    <!-- Perno central -->
+    <circle cx="180" cy="150" r="5" fill="#1e293b"/>
+
+    <!-- Columnas verticales a plomo -->
+    <line x1="90" y1="210" x2="90" y2="90" stroke="#b45309" stroke-width="8" stroke-linecap="round"/>
+    <line x1="270" y1="210" x2="270" y2="90" stroke="#b45309" stroke-width="8" stroke-linecap="round"/>
+    <!-- Viga superior nivelada -->
+    <line x1="70" y1="90" x2="290" y2="90" stroke="#78350f" stroke-width="10" stroke-linecap="round"/>
+    <!-- Solera de piso -->
+    <line x1="70" y1="210" x2="290" y2="210" stroke="#78350f" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Etiquetas de fuerza en diagonales -->
+    <rect x="95" y="115" width="70" height="18" rx="3" fill="#16a34a"/>
+    <text x="130" y="128" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">Tracción</text>
+    <rect x="195" y="115" width="80" height="18" rx="3" fill="#16a34a"/>
+    <text x="235" y="128" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">Compresión</text>
+
+    <!-- Éxito estabilidad -->
+    <rect x="50" y="225" width="260" height="24" rx="4" fill="#dcfce7"/>
+    <text x="180" y="241" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">✅ ¡ESTRUCTURA TIESA Y FIRME!</text>
+  </g>
+</svg>
+        <figcaption class="fig-caption">
+          <strong>Figura 1.1:</strong> Comparación de estabilidad estructural. El marco cuadrado sin diagonales es un mecanismo inestable; la Cruz de San Andrés genera dos triángulos rígidos indeformables.
+        </figcaption>
+      </figure>
 
       <p>
         <strong>El triángulo es la única figura geométrica indeformable de la naturaleza.</strong> Cuando colocamos dos maderos en diagonal cruzados de esquina a esquina formando una <strong>"X" (Cruz de San Andrés)</strong>, el marco queda bloqueado: una diagonal resiste el empuje hacia la derecha trabajando a tracción, y la otra resiste el empuje hacia la izquierda trabajando a compresión.
@@ -817,7 +954,6 @@
         </div>
       </section>
 
-      <!-- Alerta Crítica -->
       <div class="alert-card">
         <div class="alert-header">
           <span>⚠️</span> ¡OJO CON ESTO, MAESTRO!
@@ -914,9 +1050,9 @@
 
       <h3 class="sub-title">2.2. Dimensiones Mínimas de Escuadría para Pies Derechos (Columnas)</h3>
       <ul>
-        <li><strong>Vivienda de 1 piso:</strong> Columnas de mínimo <strong>$3" \times 4"$ ($7.5 \times 10\text{ cm}$)</strong> o rollizos de diámetro no menor a 10 cm.</li>
-        <li><strong>Vivienda de 2 pisos (primer nivel):</strong> Columnas de mínimo <strong>$4" \times 4"$ ($10 \times 10\text{ cm}$)</strong> o <strong>$4" \times 6"$ ($10 \times 15\text{ cm}$)</strong>.</li>
-        <li><strong>Separación entre columnas (intercolumnio):</strong> Máximo cada <strong>2.50 a 3.00 metros</strong>. Entre columna y columna se colocan pies derechos secundarios de $2" \times 4"$ cada 50 o 60 cm para recibir el forro.</li>
+        <li><strong>Vivienda de 1 piso:</strong> Columnas de mínimo <strong>3" × 4" (7.5 × 10 cm)</strong> o rollizos de diámetro no menor a 10 cm.</li>
+        <li><strong>Vivienda de 2 pisos (primer nivel):</strong> Columnas de mínimo <strong>4" × 4" (10 × 10 cm)</strong> o <strong>4" × 6" (10 × 15 cm)</strong>.</li>
+        <li><strong>Separación entre columnas (intercolumnio):</strong> Máximo cada <strong>2.50 a 3.00 metros</strong>. Entre columna y columna se colocan pies derechos secundarios de 2" × 4" cada 50 o 60 cm para recibir el forro.</li>
       </ul>
 
       <div class="page-footer">
@@ -945,21 +1081,61 @@
         Uno de los errores más peligrosos en la carpintería artesanal es unir dos maderos gruesos clavando un par de puntillas directas por fuera. Con el tiempo, la humedad ablanda la fibra, el sismo sacude la estructura y los clavos se salen como dientes flojos.
       </p>
 
-      <div class="ascii-diagram">
-       ERROR PELIGROSO:                          CONEXIÓN CORRECTA NSR-10:
-    Clavado a tope directo                  Perno pasante con pletina y arandela
+      <!-- DIBUJO VECTORIAL SVG: CLAVADO A TOPE VS PERNO PASANTE -->
+      <figure class="svg-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="100%" height="100%" style="border-radius: 8px; font-family: 'Outfit', 'Inter', sans-serif;">
+  <rect width="800" height="280" fill="#f8fafc" rx="8"/>
 
-       [Carrera]                                   [Carrera]
-       ====================                        ====================
-          |      ^                                    |  [Pletina en T] |
-          |      | Clavo trabajando                   |    o  o  o      |  Pernos pasantes
-          |      | a extracción pura                  |  ---O----       |  con arandelas anchas
-       +--+--+ (¡Se desclava solo!)                +--+--+   |          |
-       |     |                                     |     |   O Perno    |
-       | Pie |                                     | Pie |   | pasante  |
-       | der |                                     | der |   o          |
-       +-----+                                     +-----+              |
-      </div>
+  <!-- PANEL IZQUIERDO: CLAVADO A TOPE -->
+  <g transform="translate(20, 15)">
+    <rect width="360" height="250" fill="#ffffff" stroke="#fca5a5" stroke-width="1.5" rx="8"/>
+    <text x="180" y="26" font-size="12" font-weight="800" fill="#dc2626" text-anchor="middle">ERROR: CLAVADO DIRECTO A TOPE</text>
+
+    <!-- Carrera superior -->
+    <rect x="60" y="50" width="240" height="28" fill="#d97706" stroke="#92400e" stroke-width="2" rx="2"/>
+    <!-- Columna inferior -->
+    <rect x="150" y="78" width="60" height="110" fill="#b45309" stroke="#78350f" stroke-width="2"/>
+
+    <!-- Clavos lisos saliéndose -->
+    <line x1="165" y1="40" x2="165" y2="95" stroke="#dc2626" stroke-width="3" stroke-dasharray="3,2"/>
+    <line x1="195" y1="35" x2="195" y2="90" stroke="#dc2626" stroke-width="3" stroke-dasharray="3,2"/>
+    <!-- Flecha de descalce -->
+    <polygon points="180,25 175,35 185,35" fill="#dc2626"/>
+    <text x="180" y="20" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">Extracción pura en sismo</text>
+
+    <rect x="30" y="205" width="300" height="34" rx="4" fill="#fee2e2"/>
+    <text x="180" y="222" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">El clavo liso pierde fricción en 10 sacudidas</text>
+    <text x="180" y="234" font-size="9" fill="#991b1b" text-anchor="middle">La madera se separa y el techo se desploma</text>
+  </g>
+
+  <!-- PANEL DERECHO: PERNO PASANTE CON PLETINA -->
+  <g transform="translate(420, 15)">
+    <rect width="360" height="250" fill="#ffffff" stroke="#86efac" stroke-width="1.5" rx="8"/>
+    <text x="180" y="26" font-size="12" font-weight="800" fill="#16a34a" text-anchor="middle">CONEXIÓN NSR-10: PLETINA + PERNO 1/2"</text>
+
+    <!-- Carrera superior -->
+    <rect x="60" y="50" width="240" height="28" fill="#d97706" stroke="#92400e" stroke-width="2" rx="2"/>
+    <!-- Columna inferior -->
+    <rect x="150" y="78" width="60" height="110" fill="#b45309" stroke="#78350f" stroke-width="2"/>
+
+    <!-- Pletina metálica en T o pletina lateral -->
+    <rect x="165" y="55" width="30" height="85" fill="#64748b" stroke="#334155" stroke-width="1.5" rx="2"/>
+
+    <!-- Pernos pasantes con arandela -->
+    <circle cx="180" cy="69" r="6" fill="#1e293b"/>
+    <circle cx="180" cy="95" r="6" fill="#1e293b"/>
+    <circle cx="180" cy="120" r="6" fill="#1e293b"/>
+
+    <!-- Llamadas técnicas -->
+    <rect x="30" y="205" width="300" height="34" rx="4" fill="#dcfce7"/>
+    <text x="180" y="222" font-size="10" font-weight="700" fill="#16a34a" text-anchor="middle">Trabaja a cizalladura pura (corte transversal)</text>
+    <text x="180" y="234" font-size="9" fill="#14532d" text-anchor="middle">Arandela Grower evita que la tuerca se desenrosque</text>
+  </g>
+</svg>
+        <figcaption class="fig-caption">
+          <strong>Figura 3.1:</strong> Comparativa de fijaciones. El clavo liso falla por extracción bajo cargas dinámicas; el perno pasante con pletina metálica transfiere el esfuerzo por cizalladura pura.
+        </figcaption>
+      </figure>
 
       <h3 class="sub-title">3.1. La Batalla Técnica: Clavo Liso vs. Perno con Arandela de Presión (Grower)</h3>
       <div class="table-container">
@@ -1001,30 +1177,63 @@
         El colapso más catastrófico en palafitos ocurre cuando la viga carguera está clavada simplemente al costado del pilote sin ningún apoyo debajo:
       </p>
 
-      <div class="ascii-diagram">
-      ERROR FATAL: CORTE PURO                   CONEXIÓN CORRECTA: ENSAMBLE EN HOMBRO
-    (Falla instantánea en sismo)                 (La madera carga sobre la madera)
+      <!-- DIBUJO VECTORIAL SVG: HOMBRO DE APOYO EN PILOTE -->
+      <figure class="svg-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="100%" style="border-radius: 8px; font-family: 'Outfit', 'Inter', sans-serif;">
+  <rect width="800" height="300" fill="#f8fafc" rx="8"/>
 
-          [Viga Carguera]                                   [Viga Carguera]
-          +-----------+                                     +-----------+
-          |           |                                     |           |
-          |     o     | <-- Clavos o pernos                 |     O     | <-- Perno pasante 1/2"
-          |     o     |     aguantan TODO el                |           |     con arandela Grower
-    +-----+-----------+                               +-----+-----------+
-    |     |                                           |     |///////////| <-- HOMBRO / REBAJE
-    |     |                                           |     +===========+     (La viga descansa
-    |     |                                           |     |                 sobre 2" a 3" de
-    |     |                                           |     |                 madera viva del pilote)
-    |  P  |                                           |  P  |
-    |  I  |                                           |  I  |
-    |  L  |                                           |  L  |
-    |  O  |                                           |  O  |
-    |  T  |                                           |  T  |
-    |  E  |                                           |  E  |
-    +-----+                                           +-----+
-  ¡EL CLAVO SE PARTE O CORTA LA FIBRA!              ¡LA MADERA TRABAJA A COMPRESIÓN DIRECTA!
-  (La casa se cae al fango)                         (El perno solo mantiene la viga en su sitio)
-      </div>
+  <!-- PANEL IZQUIERDO: FALLA CORTE PURO -->
+  <g transform="translate(20, 15)">
+    <rect width="360" height="270" fill="#ffffff" stroke="#fca5a5" stroke-width="1.5" rx="8"/>
+    <text x="180" y="26" font-size="12" font-weight="800" fill="#dc2626" text-anchor="middle">ERROR FATAL: VIGA CLAVADA AL COSTADO</text>
+
+    <!-- Pilote recto sin hombro -->
+    <rect x="110" y="60" width="70" height="150" fill="#78350f" stroke="#451a03" stroke-width="2"/>
+    <!-- Viga carguera lateral -->
+    <rect x="180" y="80" width="70" height="60" fill="#d97706" stroke="#92400e" stroke-width="2"/>
+
+    <!-- Clavos partidos por corte -->
+    <line x1="150" y1="100" x2="210" y2="100" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/>
+    <line x1="150" y1="120" x2="210" y2="120" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/>
+
+    <!-- Flecha de caída -->
+    <polygon points="215,165 205,150 225,150" fill="#dc2626"/>
+    <text x="215" y="180" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">¡LA VIGA CAE!</text>
+
+    <rect x="25" y="220" width="310" height="36" rx="4" fill="#fee2e2"/>
+    <text x="180" y="236" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">Los clavos o pernos trabajan a corte en el aire</text>
+    <text x="180" y="248" font-size="9" fill="#991b1b" text-anchor="middle">En un temblor se degüellan y el piso colapsa</text>
+  </g>
+
+  <!-- PANEL DERECHO: ENSAMBLE EN HOMBRO -->
+  <g transform="translate(420, 15)">
+    <rect width="360" height="270" fill="#ffffff" stroke="#86efac" stroke-width="1.5" rx="8"/>
+    <text x="180" y="26" font-size="12" font-weight="800" fill="#16a34a" text-anchor="middle">ENSAMBLE CORRECTO: HOMBRO / REBAJE</text>
+
+    <!-- Pilote con hombro rebajado -->
+    <!-- Espaldar alto del pilote -->
+    <path d="M 110 60 L 145 60 L 145 110 L 180 110 L 180 210 L 110 210 Z" fill="#78350f" stroke="#451a03" stroke-width="2"/>
+    <!-- Viga carguera sentada sobre el hombro -->
+    <rect x="145" y="80" width="75" height="60" fill="#d97706" stroke="#92400e" stroke-width="2"/>
+
+    <!-- Perno pasante horizontal -->
+    <rect x="100" y="96" width="130" height="8" fill="#64748b" stroke="#1e293b" stroke-width="1.5"/>
+    <circle cx="100" cy="100" r="6" fill="#334155"/>
+    <circle cx="230" cy="100" r="6" fill="#334155"/>
+
+    <!-- Línea de cota de hombro -->
+    <line x1="145" y1="145" x2="180" y2="145" stroke="#16a34a" stroke-width="2"/>
+    <text x="162" y="160" font-size="9" font-weight="700" fill="#16a34a" text-anchor="middle">2" a 3"</text>
+
+    <rect x="25" y="220" width="310" height="36" rx="4" fill="#dcfce7"/>
+    <text x="180" y="236" font-size="10" font-weight="700" fill="#16a34a" text-anchor="middle">La madera carga directamente sobre la madera</text>
+    <text x="180" y="248" font-size="9" fill="#14532d" text-anchor="middle">Compresión paralela a la fibra: 10× más resistente</text>
+  </g>
+</svg>
+        <figcaption class="fig-caption">
+          <strong>Figura 3.2:</strong> Detalle del apoyo de viga carguera en pilote. El hombro tallado asegura que el peso baje por compresión directa sobre la fibra viva de la madera, evitando la falla por corte.
+        </figcaption>
+      </figure>
 
       <p>
         <strong>La regla de oro del hombro:</strong> La cabeza del pilote debe rebajarse entre <strong>5 y 7.5 cm (2" a 3") de profundidad</strong> para crear una repisa horizontal perfecta. Así, el peso de la vivienda se transmite por <strong>compresión directa sobre la fibra</strong>, donde la madera es 10 veces más resistente.
@@ -1056,63 +1265,129 @@
         El piso del palafito amarra las cabezas de los pilotes para que se muevan juntos en el temblor. Si el piso es flexible, los pilotes vibran desfasados y parten la vivienda.
       </p>
 
-      <div class="ascii-diagram">
-                  DISTRIBUCIÓN DEL ENTRAMADO DE PISO PALAFÍTICO
+      <!-- DIBUJO VECTORIAL SVG: ENTRAMADO DE PISO -->
+      <figure class="svg-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="100%" height="100%" style="border-radius: 8px; font-family: 'Outfit', 'Inter', sans-serif;">
+  <rect width="800" height="280" fill="#f8fafc" rx="8"/>
+  <text x="400" y="26" font-size="14" font-weight="800" fill="#0f766e" text-anchor="middle">ENTRAMADO DE PISO PALAFÍTICO: DIAFRAGMA RÍGIDO HORIZONTAL</text>
 
-             +---------------------------------------------+  [Pilote de esquina]
-             | [Viga Maestra Carguera: 4"x6" o 3"x6"]      |
-             +=======+==============+==============+=======+
-             |       |              |              |       |
-             |       | Viguetas     | Viguetas     |       |
-             |       | secundarias  | secundarias  |       |
-             |       | (2"x4" o     | (Separadas   |       |
-             |       |  2"x5")      |  40 a 50 cm) |       |
-             |       |              |              |       |
-             +=======+==============+==============+=======+
-             | [Viga Maestra Carguera: 4"x6" o 3"x6"]      |
-             +---------------------------------------------+
-               ▲                                           ▲
-               |======== Entablado clavado a 90° =========|
-               (Tablas de 1" fijadas con 2 clavos por vigueta para armar diafragma)
-      </div>
+  <!-- Pilotes de soporte (4 esquinas) -->
+  <rect x="70" y="45" width="26" height="26" fill="#78350f" stroke="#451a03" stroke-width="2"/>
+  <rect x="700" y="45" width="26" height="26" fill="#78350f" stroke="#451a03" stroke-width="2"/>
+  <rect x="70" y="200" width="26" height="26" fill="#78350f" stroke="#451a03" stroke-width="2"/>
+  <rect x="700" y="200" width="26" height="26" fill="#78350f" stroke="#451a03" stroke-width="2"/>
+
+  <!-- Vigas Maestras Cargueras (4"x6") -->
+  <rect x="60" y="48" width="675" height="20" fill="#b45309" stroke="#78350f" stroke-width="2"/>
+  <rect x="60" y="203" width="675" height="20" fill="#b45309" stroke="#78350f" stroke-width="2"/>
+
+  <!-- Viguetas Secundarias (2"x4" cada 40-50 cm) -->
+  <g fill="#d97706" stroke="#92400e" stroke-width="1.5">
+    <rect x="130" y="68" width="14" height="135"/>
+    <rect x="210" y="68" width="14" height="135"/>
+    <rect x="290" y="68" width="14" height="135"/>
+    <rect x="370" y="68" width="14" height="135"/>
+    <rect x="450" y="68" width="14" height="135"/>
+    <rect x="530" y="68" width="14" height="135"/>
+    <rect x="610" y="68" width="14" height="135"/>
+  </g>
+
+  <!-- Cota de separación 40-50 cm -->
+  <line x1="297" y1="135" x2="377" y2="135" stroke="#0284c7" stroke-width="2"/>
+  <polygon points="302,132 297,135 302,138" fill="#0284c7"/>
+  <polygon points="372,132 377,135 372,138" fill="#0284c7"/>
+  <rect x="307" y="118" width="60" height="16" rx="3" fill="#0284c7"/>
+  <text x="337" y="130" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">40 a 50 cm</text>
+
+  <!-- Tablado parcial a 90° con clavado -->
+  <g fill="#f59e0b" stroke="#b45309" stroke-width="1" opacity="0.9">
+    <rect x="440" y="68" width="260" height="16"/>
+    <rect x="440" y="88" width="260" height="16"/>
+    <rect x="440" y="108" width="260" height="16"/>
+    <rect x="440" y="128" width="260" height="16"/>
+    <rect x="440" y="148" width="260" height="16"/>
+    <rect x="440" y="168" width="260" height="16"/>
+    <rect x="440" y="188" width="260" height="16"/>
+  </g>
+  <!-- Puntos de clavado (2 por cruce) -->
+  <g fill="#1e293b">
+    <circle cx="534" cy="76" r="2"/> <circle cx="540" cy="76" r="2"/>
+    <circle cx="534" cy="96" r="2"/> <circle cx="540" cy="96" r="2"/>
+    <circle cx="614" cy="76" r="2"/> <circle cx="620" cy="76" r="2"/>
+    <circle cx="614" cy="96" r="2"/> <circle cx="620" cy="96" r="2"/>
+  </g>
+
+  <!-- Rótulo de diafragma -->
+  <rect x="460" y="145" width="220" height="22" rx="4" fill="#1e293b"/>
+  <text x="570" y="160" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">2 clavos de 2½" en cada cruce</text>
+
+  <!-- Leyenda de elementos -->
+  <rect x="60" y="240" width="675" height="26" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="400" y="257" font-size="11" font-weight="600" fill="#334155" text-anchor="middle">Vigas Cargueras (4"×6") + Viguetas (2"×4" a 40-50 cm) + Entablado = <tspan fill="#16a34a" font-weight="700">Placa Rígida Indeformable</tspan></text>
+</svg>
+        <figcaption class="fig-caption">
+          <strong>Figura 4.1:</strong> Planta de entramado de piso palafítico. Las vigas maestras y viguetas cruzadas con entablado clavado forman un diafragma plano que distribuye las fuerzas del terremoto.
+        </figcaption>
+      </figure>
 
       <ul>
-        <li><strong>Vigas Maestras:</strong> Escuadría mínima de <strong>$3" \times 6"$ o $4" \times 6"$</strong> (Nato o Chanul), apoyadas sobre los hombros de los pilotes.</li>
-        <li><strong>Viguetas Secundarias:</strong> Listones de <strong>$2" \times 4"$ o $2" \times 5"$</strong> cada <strong>40 a 50 cm</strong> de centro a centro para evitar el pandeo o rebote al caminar.</li>
-        <li><strong>Entablado Estructural:</strong> Tablas fijadas con al menos <strong>dos clavos de $2\frac{1}{2}"$ en cada cruce con una vigueta</strong>, armando un plano indeformable.</li>
+        <li><strong>Vigas Maestras:</strong> Escuadría mínima de <strong>3" × 6" o 4" × 6"</strong> (Nato o Chanul), apoyadas sobre los hombros de los pilotes.</li>
+        <li><strong>Viguetas Secundarias:</strong> Listones de <strong>2" × 4" o 2" × 5"</strong> cada <strong>40 a 50 cm</strong> de centro a centro para evitar el pandeo o rebote al caminar.</li>
+        <li><strong>Entablado Estructural:</strong> Tablas fijadas con al menos <strong>dos clavos de 2½" en cada cruce con una vigueta</strong>, armando un plano indeformable.</li>
       </ul>
 
-      <h2 class="section-title"><span>4.1.</span> Cruces de San Andrés ($X$) en la Zona de Pilotes: El Freno Sísmico</h2>
+      <h2 class="section-title"><span>4.1.</span> Cruces de San Andrés (X) en la Zona de Pilotes: El Freno Sísmico</h2>
       <p>
         Los pilotes elevados (1.5 a 2.8 m sobre el fango) actúan como patas largas flexibles. Sin diagonales, el sismo los parte por flexión en la interfase suelo-aire:
       </p>
 
-      <div class="ascii-diagram">
-             ARRIOSTRAMIENTO EN "X" ENTRE PILOTES (ZONA PALAFÍTICA)
+      <!-- DIBUJO VECTORIAL SVG: CRUCES EN PILOTES -->
+      <figure class="svg-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="100%" height="100%" style="border-radius: 8px; font-family: 'Outfit', 'Inter', sans-serif;">
+  <rect width="800" height="280" fill="#f8fafc" rx="8"/>
+  <text x="400" y="24" font-size="13" font-weight="800" fill="#0f766e" text-anchor="middle">ARRIOSTRAMIENTO EN "X" ENTRE PILOTES (ZONA PALAFÍTICA)</text>
 
-               [Viga Maestra del Piso]           [Viga Maestra del Piso]
-               +-------------------------------------------------------+
-               |                       ^                               |
-               |                       | Perno pasante 1/2" con arandela
-               | \                   / |                               |
-               |   \               /   |                               |
-               |     \           /     |                               |
-               |       \       /       |                               |
-       Pilote  |         \   /         | Perno central en cruce de "X" Pilote
-       de Nato |           X           |                               de Nato
-       (ES1)   |         /   \         |                               (ES1)
-               |       /       \       |                               |
-               |     /           \     |                               |
-               |   /               \   |                               |
-               | /                   \ |                               |
-               +-----------------------+-------------------------------+
-               |                       |                               |
-        ~~~~~~~~~~~~~~~~ Nivel de Marea Máxima (HAT +5.31 m) ~~~~~~~~~~~~~~~~
-        ================ Nivel del Fango / Suelo Aluvial ====================
-      </div>
+  <!-- Fango y Agua -->
+  <rect x="40" y="200" width="720" height="60" fill="#78350f" opacity="0.8" rx="4"/>
+  <line x1="40" y1="170" x2="760" y2="170" stroke="#0284c7" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="630" y="165" font-size="10" font-weight="700" fill="#0284c7">Marea Máxima HAT +5.31 m</text>
+  <text x="630" y="235" font-size="10" font-weight="700" fill="#fef3c7">Fango Aluvial Blando</text>
+
+  <!-- Viga carguera superior de piso -->
+  <rect x="120" y="40" width="560" height="18" fill="#b45309" stroke="#78350f" stroke-width="2" rx="2"/>
+  <text x="400" y="53" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Viga Maestra del Piso Palafítico (4"×6")</text>
+
+  <!-- Pilotes de Nato -->
+  <rect x="180" y="50" width="30" height="180" fill="#78350f" stroke="#451a03" stroke-width="2" rx="3"/>
+  <rect x="590" y="50" width="30" height="180" fill="#78350f" stroke="#451a03" stroke-width="2" rx="3"/>
+
+  <!-- Diagonales en X (Cruces de San Andrés) -->
+  <line x1="195" y1="65" x2="605" y2="190" stroke="#16a34a" stroke-width="9" stroke-linecap="round"/>
+  <line x1="605" y1="65" x2="195" y2="190" stroke="#16a34a" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Pernos extremos -->
+  <circle cx="195" cy="65" r="5" fill="#1e293b"/>
+  <circle cx="605" cy="65" r="5" fill="#1e293b"/>
+  <circle cx="195" cy="190" r="5" fill="#1e293b"/>
+  <circle cx="605" cy="190" r="5" fill="#1e293b"/>
+
+  <!-- Perno central pasante -->
+  <circle cx="400" cy="127" r="7" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Etiquetas técnicas -->
+  <rect x="300" y="85" width="200" height="22" rx="4" fill="#dc2626"/>
+  <text x="400" y="100" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Perno central: reduce pandeo al 50%</text>
+
+  <rect x="180" y="245" width="440" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="400" y="260" font-size="10" font-weight="700" fill="#16a34a" text-anchor="middle">Diagonales de 2"×4" o 1.5"×5" con ángulo entre 35° y 55°</text>
+</svg>
+        <figcaption class="fig-caption">
+          <strong>Figura 4.2:</strong> Arriostramiento lateral entre pilotes. El perno pasante en el cruce central de la X es indispensable para evitar el pandeo por compresión de las diagonales.
+        </figcaption>
+      </figure>
 
       <p>
-        <strong>Detalles constructivos de la Cruz en pilotes:</strong> Diagonales de <strong>$2" \times 4"$ o $1.5" \times 5"$</strong> a un ángulo entre $35^\circ$ y $55^\circ$. Pernos de 1/2" en extremos y <strong>perno central en el cruce de la "X"</strong> para evitar el pandeo por compresión. Mínimo <strong>dos crujías en X por cada fachada</strong>.
+        <strong>Detalles constructivos de la Cruz en pilotes:</strong> Diagonales de <strong>2" × 4" o 1.5" × 5"</strong> a un ángulo entre 35° y 55°. Pernos de 1/2" en extremos y <strong>perno central en el cruce de la "X"</strong> para evitar el pandeo por compresión. Mínimo <strong>dos crujías en X por cada fachada</strong>.
       </p>
 
       <h2 class="section-title"><span>4.2.</span> Cota de Piso con Datos de Marea (Estación CP1-05 DIMAR)</h2>
@@ -1124,10 +1399,10 @@
           Integrando los datos mareográficos oficiales de la DIMAR (Vértice CP1-05 TCBUEN / Bahía de Buenaventura):
         </p>
         <ul>
-          <li><strong>Pleamar de Sicigia (Puja media - MHWS):</strong> $+4.81\text{ m}$ sobre el datum LAT.</li>
-          <li><strong>Marea Astronómica Máxima Extrema (HAT):</strong> $+5.31\text{ m}$ sobre el datum LAT.</li>
-          <li><strong>Sobreelevación fluvial Río Dagua + Borde Libre:</strong> $0.50\text{ m}$ a $0.80\text{ m}$.</li>
-          <li><strong>Cota mínima de piso terminado ($NPT_{min}$):</strong> La plataforma debe ubicarse entre <strong>2.20 m y 2.80 m</strong> por encima del lecho de fango.</li>
+          <li><strong>Pleamar de Sicigia (Puja media - MHWS):</strong> +4.81 m sobre el datum LAT.</li>
+          <li><strong>Marea Astronómica Máxima Extrema (HAT):</strong> +5.31 m sobre el datum LAT.</li>
+          <li><strong>Sobreelevación fluvial Río Dagua + Borde Libre:</strong> 0.50 m a 0.80 m.</li>
+          <li><strong>Cota mínima de piso terminado (NPT<sub>mín</sub>):</strong> La plataforma debe ubicarse entre <strong>2.20 m y 2.80 m</strong> por encima del lecho de fango.</li>
         </ul>
       </div>
 
@@ -1160,44 +1435,134 @@
         <strong>El invento sismorresistente colombiano:</strong> Inyectar una mezcla fluida de cemento y arena (1:2) dentro del canuto donde pasa el perno. Al fraguar, el mortero forma un tapón macizo indestructible que transfiere el esfuerzo al nudo.
       </p>
 
-      <!-- Lámina Detalle 3.2: Guadua Inyectada en Español -->
-      <figure class="tech-figure">
-        <img src="images/detalle_guadua_inyectada.jpg" alt="Detalle de unión de bambú-guadua con perno pasante y mortero inyectado" id="imgGuadua" />
+      <!-- LÁMINA 3.2 EN FORMATO VECTORIAL SVG -->
+      <figure class="svg-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="100%" height="100%" style="border-radius: 8px; font-family: 'Outfit', 'Inter', sans-serif;">
+  <defs>
+    <linearGradient id="guaduaCortex" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="15%" stop-color="#22c55e"/>
+      <stop offset="85%" stop-color="#16a34a"/>
+      <stop offset="100%" stop-color="#14532d"/>
+    </linearGradient>
+    <linearGradient id="mortarGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cbd5e1"/>
+      <stop offset="50%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="460" fill="#f8fafc" rx="8"/>
+
+  <!-- TITULO INTERNO -->
+  <text x="400" y="30" font-size="15" font-weight="800" fill="#0f766e" text-anchor="middle">CORTE LONGITUDINAL: ENSAMBLE SISMORRESISTENTE NSR-10 (G.12)</text>
+
+  <!-- CULMO DE GUADUA (Cilindro seccionado) -->
+  <!-- Pared izquierda de guadua -->
+  <rect x="260" y="60" width="24" height="340" fill="url(#guaduaCortex)" stroke="#14532d" stroke-width="2"/>
+  <!-- Pared derecha de guadua -->
+  <rect x="516" y="60" width="24" height="340" fill="url(#guaduaCortex)" stroke="#14532d" stroke-width="2"/>
+
+  <!-- NUDO / DIAFRAGMA NATURAL (Abajo) -->
+  <rect x="284" y="340" width="232" height="28" fill="#15803d" stroke="#14532d" stroke-width="2"/>
+  <!-- Anillo exterior del nudo -->
+  <ellipse cx="260" cy="354" rx="14" ry="10" fill="#166534"/>
+  <ellipse cx="540" cy="354" rx="14" ry="10" fill="#166534"/>
+  <text x="400" y="358" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">NUDO NATURAL INTACTO (ZUNCHO DE CONTENCIÓN)</text>
+
+  <!-- MORTERO INYECTADO (Tapón sólido 1:2) -->
+  <rect x="284" y="140" width="232" height="200" fill="url(#mortarGrad)" stroke="#475569" stroke-width="1.5"/>
+  <!-- Tramas de mortero / piedrecillas -->
+  <circle cx="320" cy="180" r="3" fill="#475569"/>
+  <circle cx="360" cy="220" r="4" fill="#334155"/>
+  <circle cx="450" cy="190" r="3" fill="#475569"/>
+  <circle cx="410" cy="280" r="5" fill="#334155"/>
+  <circle cx="480" cy="260" r="4" fill="#475569"/>
+  <text x="400" y="180" font-size="13" font-weight="800" fill="#1e293b" text-anchor="middle">NÚCLEO DE MORTERO 1:2</text>
+  <text x="400" y="200" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">(Tapón macizo de cemento y arena)</text>
+
+  <!-- VENTANILLA DE INYECCIÓN (Arriba) -->
+  <rect x="360" y="110" width="80" height="30" rx="6" fill="#f1f5f9" stroke="#0284c7" stroke-width="2" stroke-dasharray="4,2"/>
+  <polygon points="400,95 390,75 410,75" fill="#0284c7"/>
+  <rect x="330" y="55" width="140" height="20" rx="4" fill="#0284c7"/>
+  <text x="400" y="69" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Ventanilla de inyección (1")</text>
+
+  <!-- PERNO PASANTE DE 1/2" (Acero galvanizado) -->
+  <rect x="200" y="238" width="400" height="14" fill="#94a3b8" stroke="#334155" stroke-width="2" rx="2"/>
+
+  <!-- ARANDELAS ANCHAS DE 2" (Planas) -->
+  <rect x="245" y="225" width="8" height="40" fill="#475569" stroke="#1e293b" stroke-width="1.5" rx="1"/>
+  <rect x="547" y="225" width="8" height="40" fill="#475569" stroke="#1e293b" stroke-width="1.5" rx="1"/>
+
+  <!-- ARANDELA DE PRESIÓN GROWER -->
+  <rect x="238" y="228" width="6" height="34" fill="#0284c7" stroke="#0369a1" stroke-width="1" rx="1"/>
+
+  <!-- TUERCA HEXAGONAL -->
+  <polygon points="225,230 236,230 238,245 236,260 225,260 222,245" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
+  <!-- Cabeza de perno -->
+  <rect x="557" y="232" width="14" height="26" fill="#334155" stroke="#0f172a" stroke-width="1.5" rx="2"/>
+
+  <!-- ACOTACIÓN DE DISTANCIA AL NUDO -->
+  <line x1="560" y1="245" x2="560" y2="340" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="556,252 560,245 564,252" fill="#dc2626"/>
+  <polygon points="556,333 560,340 564,333" fill="#dc2626"/>
+  <rect x="575" y="280" width="180" height="24" rx="4" fill="#dc2626"/>
+  <text x="665" y="296" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">DISTANCIA ≤ 5.0 cm AL NUDO</text>
+
+  <!-- LLAMADA ARANDELA GROWER -->
+  <line x1="240" y1="245" x2="160" y2="290" stroke="#0284c7" stroke-width="2"/>
+  <rect x="20" y="290" width="180" height="36" rx="4" fill="#0284c7"/>
+  <text x="110" y="306" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Arandela Grower + Plana</text>
+  <text x="110" y="318" font-size="9" fill="#f0f9ff" text-anchor="middle">Absorbe contracción higroscópica</text>
+</svg>
         <figcaption class="fig-caption">
           <strong>Lámina 3.2:</strong> Corte en sección transversal del ensamble sismorresistente. Se aprecia el canuto relleno de mortero fluido 1:2 formando un núcleo macizo alrededor del perno pasante con arandelas anchas, siempre ubicado junto a un <strong>nudo natural</strong>.
         </figcaption>
       </figure>
 
-      <div class="ascii-diagram">
-                       PASO A PASO: LA UNIÓN INYECTADA NSR-10
-                       
-   Paso 1: Perforación             Paso 2: Ventanilla             Paso 3: Vaciado y Fraguado
-   
-         NUDO                            NUDO                            NUDO
-      |========|                      |========|                      |========|
-      |        |                      |  [==]  | <-- Ventanilla       | #######| <-- CANUTO
-      |        |                      |        |     de inyección     | #######|     RELLENO CON
-      |   (O)  | <-- Agujero de       |---(O)--| <-- Perno pasante    |---(O)--|     MORTERO 1:2
-      |        |     perno 1/2"       |        |     de acero         | #######|     (Forma un tapón
-      |        |                      |        |                      | #######|     sólido macizo)
-      |========|                      |========|                      |========|
-         NUDO                            NUDO                            NUDO
-      </div>
-
       <h3 class="sub-title">5.1. Cortes Tradicionales de Acople en Guadua</h3>
-      <div class="ascii-diagram">
-            CORTE "BOCA DE PESCADO"                       CORTE "PICO DE FLAUTA"
-            (Unión perpendicular a 90°)                  (Unión en diagonal a 45°)
-            
-                   /========\                                   /========\
-                  /          \                                 /        /
-                 |    NUDO    |                               |  NUDO  /
-                 \            /                                \      /
-                  \          /                                  \    /
-                 (            ) <-- Curva cóncava                \  /
-                  \          /      que abraza el culmo           \/ <-- Bisel plano a 45°
-                   \========/       de la columna                        para diagonales
-      </div>
+      
+      <!-- DIBUJO VECTORIAL SVG: CORTES EN GUADUA -->
+      <figure class="svg-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="100%" style="border-radius: 8px; font-family: 'Outfit', 'Inter', sans-serif;">
+  <rect width="800" height="240" fill="#f8fafc" rx="8"/>
+
+  <!-- PANEL IZQUIERDO: BOCA DE PESCADO -->
+  <g transform="translate(40, 15)">
+    <rect width="340" height="210" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" rx="8"/>
+    <text x="170" y="26" font-size="12" font-weight="800" fill="#0f766e" text-anchor="middle">CORTE "BOCA DE PESCADO" (A 90°)</text>
+
+    <!-- Culmo con corte cóncavo -->
+    <path d="M 80 60 L 220 60 L 220 150 L 80 150 Z" fill="#16a34a" stroke="#14532d" stroke-width="2"/>
+    <!-- Nudo terminal -->
+    <rect x="200" y="60" width="15" height="90" fill="#15803d"/>
+    <!-- Boca cóncava vaciada -->
+    <path d="M 220 60 Q 185 105, 220 150 Z" fill="#ffffff" stroke="#14532d" stroke-width="2"/>
+
+    <text x="170" y="180" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Abraza el culmo vertical cilíndrico</text>
+    <text x="170" y="196" font-size="9" font-weight="700" fill="#0f766e" text-anchor="middle">Regla de oro: muere exactamente en el anillo del nudo</text>
+  </g>
+
+  <!-- PANEL DERECHO: PICO DE FLAUTA -->
+  <g transform="translate(420, 15)">
+    <rect width="340" height="210" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" rx="8"/>
+    <text x="170" y="26" font-size="12" font-weight="800" fill="#0f766e" text-anchor="middle">CORTE "PICO DE FLAUTA" (A 45°)</text>
+
+    <!-- Culmo con corte biselado -->
+    <path d="M 80 60 L 170 60 L 230 150 L 80 150 Z" fill="#16a34a" stroke="#14532d" stroke-width="2"/>
+    <!-- Bisel plano a 45° -->
+    <line x1="170" y1="60" x2="230" y2="150" stroke="#14532d" stroke-width="3"/>
+    <!-- Nudo de asiento -->
+    <line x1="160" y1="60" x2="160" y2="150" stroke="#15803d" stroke-width="4"/>
+
+    <text x="170" y="180" font-size="10" font-weight="600" fill="#334155" text-anchor="middle">Apoyo biselado para diagonales de arriostramiento</text>
+    <text x="170" y="196" font-size="9" font-weight="700" fill="#0f766e" text-anchor="middle">Asienta firme contra el nudo de la columna</text>
+  </g>
+</svg>
+        <figcaption class="fig-caption">
+          <strong>Figura 5.1:</strong> Cortes maestros tradicionales. Boca de pescado para empalmes a 90° y Pico de flauta para diagonales de arriostramiento a 45°.
+        </figcaption>
+      </figure>
 
       <!-- CALCULADORA DE DISTANCIAS DE TALADRADO NSR-10 -->
       <div class="calc-box no-print">
@@ -1259,30 +1624,71 @@
         En el Pacífico la lluvia es continua (>6.000 mm/año) y batiente por vendavales costeros. Un techo con aleros cortos pudre las paredes en dos años o sale volando con el viento:
       </p>
 
-      <div class="ascii-diagram">
-                    EL TECHO TROPICAL CON PROTECCIÓN POR DISEÑO
+      <!-- DIBUJO VECTORIAL SVG: TECHO TROPICAL -->
+      <figure class="svg-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="100%" height="100%" style="border-radius: 8px; font-family: 'Outfit', 'Inter', sans-serif;">
+  <rect width="800" height="280" fill="#f8fafc" rx="8"/>
+  <text x="400" y="24" font-size="13" font-weight="800" fill="#0f766e" text-anchor="middle">PROTECCIÓN POR DISEÑO: ALEROS AMPLIOS Y FIJACIÓN ANTI-HURACÁN</text>
 
-                      Láminas de zinc con clavo paraguas
-                      y golilla de caucho EN LA CRESTA
-                                 ▲
-                     /============\============\
-                    /              \            \
-                   /   [Cercha en   \            \
-                  /     Pendolón]    \            \
-                 /                    \            \
-                /                      \            \
-          +----+------------------------+----+       \
-          |    |  [Solera Superior]     |    |        \
-          |                                            \ <--- ALERO DE SEGURIDAD
-          |    |                        |    |                (Mínimo 80 a 120 cm)
-          |    |                        |    |                ¡Protege la pared de madera
-          |    |  Pared protegida       |    |                 de la lluvia batiente!
-          |    |  del sol y lluvia      |    |
-      </div>
+  <!-- Lluvia batiente en diagonal (viento costero) -->
+  <g stroke="#93c5fd" stroke-width="1.5" stroke-dasharray="8,6" opacity="0.6">
+    <line x1="40" y1="20" x2="120" y2="180"/>
+    <line x1="90" y1="20" x2="170" y2="180"/>
+    <line x1="140" y1="20" x2="220" y2="180"/>
+  </g>
+
+  <!-- Cubierta de Zinc con Alero >= 1.0 m -->
+  <polyline points="100,85 400,25 700,85" fill="none" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Cercha en madera -->
+  <line x1="160" y1="85" x2="640" y2="85" stroke="#78350f" stroke-width="8"/>
+  <line x1="160" y1="85" x2="400" y2="28" stroke="#b45309" stroke-width="8"/>
+  <line x1="640" y1="85" x2="400" y2="28" stroke="#b45309" stroke-width="8"/>
+  <line x1="400" y1="28" x2="400" y2="85" stroke="#92400e" stroke-width="6"/>
+
+  <!-- Pared de madera (Seca y protegida) -->
+  <rect x="200" y="85" width="20" height="150" fill="#d97706" stroke="#92400e" stroke-width="2"/>
+  <rect x="580" y="85" width="20" height="150" fill="#d97706" stroke="#92400e" stroke-width="2"/>
+
+  <!-- Acotación de Alero 1.0 m -->
+  <line x1="100" y1="100" x2="200" y2="100" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="106,97 100,100 106,103" fill="#dc2626"/>
+  <polygon points="194,97 200,100 194,103" fill="#dc2626"/>
+  <rect x="95" y="110" width="110" height="20" rx="3" fill="#dc2626"/>
+  <text x="150" y="124" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">ALERO ≥ 1.0 m</text>
+
+  <!-- Detalle Fleje Anti-Huracán -->
+  <rect x="195" y="78" width="10" height="25" fill="#38bdf8" stroke="#0284c7" stroke-width="1.5" rx="2"/>
+  <line x1="190" y1="90" x2="130" y2="155" stroke="#0284c7" stroke-width="1.5"/>
+  <rect x="30" y="155" width="160" height="34" rx="4" fill="#0284c7"/>
+  <text x="110" y="170" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Fleje Metálico Anti-Huracán</text>
+  <text x="110" y="182" font-size="9" fill="#e0f2fe" text-anchor="middle">Amarra cercha con solera</text>
+
+  <!-- Detalle Clavado en Cresta -->
+  <g transform="translate(620, 120)">
+    <rect width="160" height="100" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" rx="6"/>
+    <text x="80" y="20" font-size="10" font-weight="800" fill="#16a34a" text-anchor="middle">CLAVADO EN CRESTA</text>
+    <!-- Onda de zinc -->
+    <path d="M 20 65 Q 40 45, 60 65 T 100 65 T 140 65" fill="none" stroke="#64748b" stroke-width="3"/>
+    <!-- Clavo paraguas con golilla en cresta -->
+    <line x1="60" y1="35" x2="60" y2="70" stroke="#1e293b" stroke-width="3"/>
+    <polygon points="50,42 60,35 70,42" fill="#1e293b"/>
+    <ellipse cx="60" cy="48" rx="8" ry="3" fill="#0284c7"/>
+    <text x="80" y="88" font-size="9" font-weight="700" fill="#15803d" text-anchor="middle">¡Jamás clavar en el valle!</text>
+  </g>
+
+  <!-- Pared protegida -->
+  <rect x="250" y="140" width="300" height="30" rx="4" fill="#dcfce7" stroke="#86efac"/>
+  <text x="400" y="160" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">PARED PROTEGIDA DEL SOL Y LA LLUVIA BATIENTE</text>
+</svg>
+        <figcaption class="fig-caption">
+          <strong>Figura 6.1:</strong> Sección técnica del techo tropical. El alero amplio protege la madera de la lluvia batiente; los flejes metálicos impiden el desprendimiento de la cubierta.
+        </figcaption>
+      </figure>
 
       <ul>
-        <li><strong>Aleros Amplios ($\ge 1.0\text{ m}$):</strong> Vuelo perimetral indispensable para impedir que el agua moje constantemente los pies derechos y cerramientos.</li>
-        <li><strong>Flejes Anti-Huracán:</strong> Pletinas de lámina galvanizada perforada de $1\frac{1}{2}"$ que amarran la cercha a la solera superior.</li>
+        <li><strong>Aleros Amplios (≥ 1.0 m):</strong> Vuelo perimetral indispensable para impedir que el agua moje constantemente los pies derechos y cerramientos.</li>
+        <li><strong>Flejes Anti-Huracán:</strong> Pletinas de lámina galvanizada perforada de 1½" que amarran la cercha a la solera superior.</li>
         <li><strong>Clavado en la Cresta de la Onda:</strong> El clavo paraguas con golilla de neopreno va <strong>SIEMPRE en la cresta alta</strong>, jamás en el valle donde baja el agua.</li>
       </ul>
 
