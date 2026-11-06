@@ -608,15 +608,25 @@
       font-family: var(--font-mono);
     }
 
-    /* REGLAS DE IMPRESIÓN */
+    /* REGLAS DE IMPRESIÓN OFICIAL (TAMAÑO CARTA - PDF READY) */
     @media print {
+      @page {
+        size: letter portrait;
+        margin: 12mm 15mm;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
       body {
         background: #ffffff !important;
         color: #000000 !important;
-        font-size: 10.5pt;
+        font-size: 10pt;
       }
 
-      .top-bar, .sim-controls, .no-print {
+      .top-bar, .sim-controls, .no-print, .page-nav-pills {
         display: none !important;
       }
 
@@ -629,14 +639,51 @@
       .manual-page {
         border: none !important;
         box-shadow: none !important;
-        padding: 10mm 12mm !important;
+        padding: 0 0 10mm 0 !important;
         margin: 0 !important;
         page-break-after: always;
+        break-after: page;
+      }
+
+      .manual-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+
+      .svg-figure {
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        margin: 1rem 0;
+        padding: 0.5rem;
+      }
+
+      .svg-figure svg {
+        max-height: 105mm;
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      table.tech-table {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      .table-container {
+        border: 1px solid #000000 !important;
+        overflow: visible !important;
+      }
+
+      .alert-card, .tip-card, .quote-box, .checklist-container {
+        page-break-inside: avoid;
+        break-inside: avoid;
       }
 
       .page-footer {
         border-top: 1px solid #000;
         color: #000;
+        margin-top: 1.5rem;
       }
     }
   </style>
